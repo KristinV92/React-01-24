@@ -1,0 +1,19 @@
+.App {
+  text-align: center;
+}
+.nupp {color:grey; background-color: green}
+.nupp:hover {height: 100px}
+.nupp:active{cursor:grab}
+.Tere {color: blue;}
+.Tere:hover {font-size: 24px;}
+.Tere {font-style: italic;}
+.hommikust {color: green;}
+.hommikust {font-weight: bold;}
+.hommikust {border-style: dashed;width: max-content;}
+.hommikust {border-color: red;}
+.hommikust:hover {border-color: brown;}
+.pilt {width: 250px;}
+.pilt {height: 300px;}
+.pilt {position: absolute; top: 0px;right: 0px;}
+.pilt:hover {border-radius: 75px;}
+.pilt:hover {opacity: 0.3;}
