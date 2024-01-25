@@ -29,3 +29,11 @@
   width: 110px;
   transform: rotate(1.1deg);
 }
+
+span{
+  border: 1px solid red;
+}
+
+.Hübriid {
+  border: 3px double green;
+}
