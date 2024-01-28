@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import { Route, Routes } from 'react-router-dom'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+<Routes>
+<Route path=''element={ <div>See on avaleht, nähtav localhost:3000 aadressil</div>} />
+<Route path='uudised' element= {<div>See on uudiste leht, nähtav localhost:3000/uudised aadressil</div>} />
+<Route path='kontakt' element= {<div>See on kontaktide leht, nähtav localhost:3000/kontakt aadressil</div>} />
+<Route path='meist' element= {<div>See on meist leht, nähtav localhost:3000/meist aadressil</div>} />
+</Routes>
     </div>
   );
 }
