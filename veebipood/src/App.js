@@ -1,23 +1,43 @@
 //import logo from './logo.svg';
 import './App.css';
 import { Link, Route, Routes } from "react-router-dom";
+import Avaleht from './pages/Avaleht';
+import Esindused from './pages/Esindused';
+import Ariklient from './pages/Ariklient';
+import Kinkekaart from './pages/Kinkekaart';
 
 
 function App() {
   return (
     <div className="App">
-     <img className="pilt" src="https://upload.wikimedia.org/wikipedia/en/9/99/Nobe_GT100.jpg" alt="Nobe elektriauto" />
-     <button className="nupp">Vajuta</button>
-     <span>Elektriauto</span>
-     <div className="Hübriid">Hübriid</div>
-     <h3>Pealkiri</h3>
+      <div className="nav"> 
+        <Link to="avaleht"> 
+        <img className="pilt" src=" /logo.png" alt="Nobe elektriauto" />
+      </Link>
+      <div>
+      <Link  className="navlink" to="esindused">
+        <img src="/esindus.svg" alt="" />
+        <span>Esindused</span>
+      </Link>
+      <Link className="navlink" to="arikliendile">
+      <img src="/ari.svg" alt="" />
+        <span>Ärikliendile</span>
+      </Link>
+      <Link className="navlink" to="osta-kinkekaart">
+      <img src="/kinkekaart.svg" alt="" />
+        <span>Kinkekaart</span>
+      </Link>
+      </div>
+      <div>s</div>
+     </div>
+    
 
-<Routes>
-  <Route path="" element={ <div>Tere</div>} />
-  <Route path="esindused" element={ <div>10 esindust, mitukümmend eksperti.</div>} />
-  <Route path="arikliendile" element={ <div>Ärikliendile</div>} />
-  <Route path="osta-kinkekaart" element={ <div>Kinkekaardi ostmine</div>} />
-</Routes>
+    <Routes>
+      <Route path="avaleht" element={ <Avaleht />} />
+      <Route path="esindused" element={ <Esindused />} />
+      <Route path="arikliendile" element={ <Ariklient />} />
+      <Route path="osta-kinkekaart" element={ <Kinkekaart />} />
+    </Routes>
     </div>
   );
 }
