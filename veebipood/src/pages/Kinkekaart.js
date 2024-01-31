@@ -2,7 +2,12 @@ import React from 'react'
 
 function Kinkekaart() {
   return (
-    <div>Kinkekaart</div>
+    <div>
+       <img src="/gift.png" alt="" />
+       <button>-</button>
+       <span>7</span>
+       <button>+</button>
+    </div>
   )
 }
 

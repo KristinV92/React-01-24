@@ -5,7 +5,9 @@ import Avaleht from './pages/Avaleht';
 import Esindused from './pages/Esindused';
 import Ariklient from './pages/Ariklient';
 import Kinkekaart from './pages/Kinkekaart';
-
+import LisaToode from './pages/LisaToode';
+import Ostukorv from './pages/Ostukorv';
+import Seaded from './pages/Seaded';
 
 function App() {
   return (
@@ -27,6 +29,16 @@ function App() {
       <img src="/kinkekaart.svg" alt="" />
         <span>Kinkekaart</span>
       </Link>
+      <Link className="navlink" to="lisa-toode">
+        <span>Lisa toode</span>
+      </Link>
+      <Link className="navlink" to="ostukorv">
+      <img src="/cart.svg" alt="" />
+        <span>Ostukorv</span>
+      </Link>
+      <Link className="navlink" to="seaded">
+        <span>Seaded</span>
+      </Link>
       </div>
       <div>s</div>
      </div>
@@ -37,6 +49,9 @@ function App() {
       <Route path="esindused" element={ <Esindused />} />
       <Route path="arikliendile" element={ <Ariklient />} />
       <Route path="osta-kinkekaart" element={ <Kinkekaart />} />
+      <Route path="lisa-toode" element={ <LisaToode />} />
+      <Route path="ostukorv" element={ <Ostukorv />} />
+      <Route path="seaded" element={ <Seaded />} />
     </Routes>
     </div>
   );
