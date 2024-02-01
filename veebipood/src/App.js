@@ -8,35 +8,36 @@ import Kinkekaart from './pages/Kinkekaart';
 import LisaToode from './pages/LisaToode';
 import Ostukorv from './pages/Ostukorv';
 import Seaded from './pages/Seaded';
+import NotFound from './pages/NotFound';
 
 function App() {
   return (
     <div className="App">
       <div className="nav"> 
-        <Link to="avaleht"> 
+        <Link to="/avaleht"> 
         <img className="pilt" src=" /logo.png" alt="Nobe elektriauto" />
       </Link>
       <div>
-      <Link  className="navlink" to="esindused">
+      <Link  className="navlink" to="/esindused">
         <img src="/esindus.svg" alt="" />
         <span>Esindused</span>
       </Link>
-      <Link className="navlink" to="arikliendile">
+      <Link className="navlink" to="/arikliendile">
       <img src="/ari.svg" alt="" />
         <span>Ärikliendile</span>
       </Link>
-      <Link className="navlink" to="osta-kinkekaart">
+      <Link className="navlink" to="/osta-kinkekaart">
       <img src="/kinkekaart.svg" alt="" />
         <span>Kinkekaart</span>
       </Link>
-      <Link className="navlink" to="lisa-toode">
+      <Link className="navlink" to="/lisa-toode">
         <span>Lisa toode</span>
       </Link>
-      <Link className="navlink" to="ostukorv">
-      <img src="/cart.svg" alt="" />
+      <Link className="navlink" to="/ostukorv">
+      <img src="/shopping.svg" alt="" />
         <span>Ostukorv</span>
       </Link>
-      <Link className="navlink" to="seaded">
+      <Link className="navlink" to="/seaded">
         <span>Seaded</span>
       </Link>
       </div>
@@ -52,6 +53,7 @@ function App() {
       <Route path="lisa-toode" element={ <LisaToode />} />
       <Route path="ostukorv" element={ <Ostukorv />} />
       <Route path="seaded" element={ <Seaded />} />
+      <Route path="*" element={ <NotFound />} />
     </Routes>
     </div>
   );

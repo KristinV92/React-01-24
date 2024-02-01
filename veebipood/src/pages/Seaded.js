@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
+// ee, en, ru
 function Seaded() {
+const [keel, muudaKeel] =useState("ee");
+
+
   return (
     <div>
-        <div>Leht on eesti keelne</div>
-        <div>Cтраница на русском языке</div>
-        <div>The page is in Estonian</div>
-        <button>Est</button>
-        <button>Eng</button>
-        <button>Rus</button>
+
+        {keel === "ee" && <div>Leht on eesti keelne</div>}
+        {keel === "ru" && <div>Cтpaницa на русском языке</div>}
+        {keel === "en" && <div>The page is in Estonian</div>}
+
+        <button onClick={() => muudaKeel("ee")}>Est</button>
+        <button onClick={() => muudaKeel("en")}>Eng</button>
+        <button onClick={() => muudaKeel("ru")}>Rus</button>
     </div>
   )
 }

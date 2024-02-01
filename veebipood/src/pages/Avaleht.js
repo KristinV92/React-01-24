@@ -2,7 +2,10 @@ import React from 'react'
 
 function Avaleht() {
   return (
-    <div>Avaleht</div>
+    <div>
+      Avaleht
+      <button>Vajuta</button>
+      </div>
   )
 }
 

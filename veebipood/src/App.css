@@ -52,12 +52,82 @@
 
 .navlink {
   text-decoration: none;
+  margin: 3px;
 }
 
 .navlink span {
 color: white;
+position:relative;
+top: -4px;
 }
 
 .navlink:hover span{
   color:pink;
+}
+.navlink img { 
+  height:20px;
+  width: 20px;
+}
+
+.leht {
+  background-color: lightgrey;
+  height: 100vh;
+  /* 100vh ekraani laius */
+}
+
+.summa {
+background-color: white;
+font-size: 40px;
+font-weight: 700;
+color: rgb(78, 75, 102, .6);
+border: none;
+margin: 2px;
+border-radius: 5px;
+cursor: pointer;
+}
+
+.summa-aktiivne {
+  background-color: white;
+  font-size: 40px;
+  font-weight: 700;
+  color: rgb(227, 6, 140);
+  border: 2px solid rgb(227, 6, 140);
+  margin: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.kingitus {
+  width: 30px;
+  height: 30px;
+}
+
+.linn {
+  color: #14142b;
+  font-family: Inter,Tahoma,Helvetica,sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin: 10px;
+  cursor: pointer;
+}
+
+.linn:hover{
+  color: #e3068c;
+  text-decoration: underline;
+}
+
+.linn-aktiivne {
+  color: #14142b;
+  font-family: Inter,Tahoma,Helvetica,sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 32px;
+  margin: 10px;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.linn-aktiivne:hover{
+  color:#e3068c;
 }

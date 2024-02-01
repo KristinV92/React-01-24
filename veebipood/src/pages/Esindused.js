@@ -9,10 +9,10 @@ const [linn,uuendaLinn] = useState("Pärnu");
   return (
     <div>
     <div>Esindused</div>
-    <span className="linn" onClick={() => uuendaLinn("Tallinn")}>Tallinn(7)</span>
-    <span className="linn" onClick={() => uuendaLinn("Tartu")}>Tartu(2)</span>
-    <span className="linn" onClick={() => uuendaLinn("Narva")}>Narva(1)</span>
-    <span className="linn" onClick={() => uuendaLinn("Pärnu")}>Pärnu(1)</span>
+    <span className={linn === "Tallinn" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Tallinn")}>Tallinn(7)</span>
+    <span className={linn === "Tartu" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Tartu")}>Tartu(2)</span>
+    <span className={linn === "Narva" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Narva")}>Narva(1)</span>
+    <span className={linn === "TPärnu" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Pärnu")}>Pärnu(1)</span>
     <br /><br />
     <div>Aktiivne linn: {linn} </div>
 

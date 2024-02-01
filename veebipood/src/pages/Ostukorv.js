@@ -1,9 +1,11 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function Ostukorv() {
   return (
     <div>
-        <h3> Ostukorv on hetkel tühi</h3>
+        <div> Ostukorv on hetkel tühi.</div>
+        <Link to="/avaleht">Avalehele</Link>
         <img src="/empty.svg" alt="" />
     </div>
   )
