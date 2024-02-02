@@ -1,0 +1,10 @@
+.home-page{
+  height:350px;
+  width: 100%;
+}
+.line {
+  height: 6px;
+  width: 95px;
+  background-color: rgb(219, 98, 42);
+  margin: 50px auto;
+}
