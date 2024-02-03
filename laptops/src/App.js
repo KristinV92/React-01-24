@@ -3,10 +3,12 @@ import './App.css';
 import Avaleht from './pages/Avaleht';
 import VaataArvuteid from './pages/VaataArvuteid';
 import LisaArvuti from './pages/LisaArvuti';
+import Navbar from './componenets/Navbar';
 
 function App() {
   return (
     <div>
+    <Navbar />
       <Link to="/">
         <button>Avalehele</button>
       </Link>
