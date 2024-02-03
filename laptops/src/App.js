@@ -3,7 +3,7 @@ import './App.css';
 import Avaleht from './pages/Avaleht';
 import VaataArvuteid from './pages/VaataArvuteid';
 import LisaArvuti from './pages/LisaArvuti';
-import Navbar from './componenets/Navbar';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
