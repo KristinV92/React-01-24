@@ -1,4 +1,4 @@
-import Topbar from "./components/topbar/TopBar";
+import TopBar from "./components/topbar/TopBar";
 import Homepage from "./pages/homepage/Homepage";
 import Login from "./pages/login/Login";
 import Register from "./pages/register/Register";
@@ -11,7 +11,7 @@ function App() {
   const currentUser = true;
   return (
     <Router>
-      <Topbar />
+      <TopBar />
       <Routes>
         <Route exact path="/">
           <Homepage />
