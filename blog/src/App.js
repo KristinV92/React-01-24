@@ -13,23 +13,13 @@ function App() {
     <Router>
       <TopBar />
       <Routes>
-        <Route exact path="/">
-        <Homepage />
-        </Route>
-        <Route path="/posts">
-          <Homepage />
-        </Route>
-        <Route path="/register">
-          {currentUser ? <Homepage /> : <Register />}
-        </Route>
-        <Route path="/login">{currentUser ? <Homepage /> : <Login />}</Route>
-        <Route path="/post/:id">
-          <Single />
-        </Route>
-        <Route path="/write">{currentUser ? <Write /> : <Login />}</Route>
-        <Route path="/settings">
-          {currentUser ? <Settings /> : <Login />}
-        </Route>
+        <Route exact path="/" element= {<Homepage />}></Route>
+        <Route path="/posts" element= {<Homepage />}></Route>
+        <Route path="/register" element={currentUser ? <Homepage /> : <Register />}></Route>
+        <Route path="/login" element={currentUser ? <Homepage /> : <Login />}></Route>
+        <Route path="/post/:id" element={<Single />}></Route>
+        <Route path="/write" element={currentUser ? <Write /> : <Login />}></Route>
+        <Route path="/settings" element= {currentUser ? <Settings /> : <Login />}></Route>
       </Routes>
     </Router>
   );

@@ -1,33 +1,20 @@
-import { Link, Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Work  from './pages/Work';
 import Hobbies from './pages/Hobbies';
 import Courses from './pages/Courses';
+import Navbar from './components/Navbar';
 
 
 function App() {
   return (
 
     <div>
-    <img className="home-page" src="abstract.jpg" alt="" />
-    <div className="line" ></div>
-
-    <div className="navigation-picture">
-      <Link className="main-link" to="/work">
-        <img src="/work.png" alt="" /> 
-        <p>Tööde leht</p>
-      </Link>
-      <Link className="main-link" to="/hobbies">
-    <img src="/hobby.jpg" alt="" /> 
-    <p>Hobide leht</p>
-    </Link>
-    <Link className="main-link" to="/courses">
-    <img src="/courses.jpg" alt="" /> 
-    <p>Kursuste leht</p>
-    </Link>
-    </div>
+     
+    
 
     <Routes>
+        <Route path="" element={  <Navbar /> } />
         <Route path="work" element={ <Work /> } />
         <Route path="hobbies" element={ <Hobbies />} />
         <Route path="courses" element={ <Courses />} />
