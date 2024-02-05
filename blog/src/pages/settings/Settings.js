@@ -41,5 +41,4 @@ function Settings() {
     </div>
   )
 }
-
-export default Settings
+export default Settings;

@@ -12,5 +12,4 @@ function Posts() {
   </div>
   )
 }
-
 export default Posts;

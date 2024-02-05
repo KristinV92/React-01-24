@@ -4,7 +4,6 @@ import Posts from "../../components/posts/Posts";
 import Sidebar from "../../components/sidebar/Sidebar";
 import "./homepage.css";
 
-
 function Homepage () {
   const location = useLocation();
   console.log(location);
@@ -18,5 +17,4 @@ function Homepage () {
     </>
     )
 }
-
 export default Homepage;

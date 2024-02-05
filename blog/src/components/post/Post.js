@@ -39,5 +39,4 @@ function Post({img}) {
     </div>
   )
 }
-
-export default Post
+export default Post;

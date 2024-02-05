@@ -62,5 +62,4 @@ function SinglePost() {
   </div>
   )
 }
-
-export default SinglePost
+export default SinglePost;

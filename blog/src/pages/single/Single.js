@@ -10,5 +10,4 @@ function Single() {
     </div>
   )
 }
-
-export default Single
+export default Single;

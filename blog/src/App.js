@@ -14,7 +14,7 @@ function App() {
       <TopBar />
       <Routes>
         <Route exact path="/">
-          <Homepage />
+        <Homepage />
         </Route>
         <Route path="/posts">
           <Homepage />
@@ -34,5 +34,4 @@ function App() {
     </Router>
   );
 }
-
 export default App;

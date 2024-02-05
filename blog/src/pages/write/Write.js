@@ -36,5 +36,4 @@ function Write() {
     </div>
   )
 }
-
-export default Write
+export default Write;
