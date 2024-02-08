@@ -71,7 +71,7 @@ top: -4px;
 
 .leht {
   background-color: lightgrey;
-  height: 100vh;
+  min-height: 100vh;
   /* 100vh ekraani laius */
 }
 

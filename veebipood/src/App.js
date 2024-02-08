@@ -55,6 +55,7 @@ function App() {
       <Route path="seaded" element={ <Seaded />} />
       <Route path="*" element={ <NotFound />} />
     </Routes>
+
     </div>
   );
 }

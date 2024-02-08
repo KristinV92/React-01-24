@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 
 function Kinkekaart() {
-  const[aktiivne, muudaAktiivne] = useState(20) ;
+  const[aktiivne, muudaAktiivne] = useState(20);
+  const [kogus, muudaKogus] = useState (1);
    
   // ? : <---ternary operator
   // KÜSIMUS ? KUI_ON_ÕIGE : KUI_EI_OLE_ÕIGE
@@ -22,9 +23,9 @@ function Kinkekaart() {
 
        <img className="kingitus"src="/gift.png" alt="" />
 
-       <button>-</button>
-       <span>7</span>
-       <button>+</button>
+       <button disabled={kogus === 1} onClick={() =>muudaKogus( kogus - 1 )}>-</button>
+       <span>{kogus}</span>
+       <button onClick={() =>muudaKogus( kogus + 1 )}>+</button>
 
     </div>
   )

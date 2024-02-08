@@ -9,14 +9,7 @@ function App() {
   return (
     <div>
      
-    <Routes>
-        <Route path="" element={  <Navbar /> } />
-        <Route path="work" element={ <Work /> } />
-        <Route path="hobbies" element={ <Hobbies />} />
-        <Route path="courses" element={ <Courses />} />
-      </Routes>
-
-      <iframe 
+     <iframe 
       width="160" 
       height="250" 
       src="https://www.youtube.com/embed/5yXQJBU8A28?si=NYZKin7V_dJuTzZX" 
@@ -24,6 +17,15 @@ function App() {
       frameborder="0"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
       </iframe>
+      
+    <Routes>
+        <Route path="" element={  <Navbar /> } />
+        <Route path="work" element={ <Work /> } />
+        <Route path="hobbies" element={ <Hobbies />} />
+        <Route path="courses" element={ <Courses />} />
+      </Routes>
+
+      
 
       <div className='facebook-button' href="https://www.facebook.com/">
           <img src="/facebook.png" alt="" />
