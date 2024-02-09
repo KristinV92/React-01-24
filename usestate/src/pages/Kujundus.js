@@ -15,7 +15,7 @@ function Kujundus() {
         onClick={() => uuendaValitud("standard")}>
             Standard
         </span>
-        <span className={valitud === "mini" ? "pakett-aktiivne" :"pakett"}
+        <span className={valitud === "mini" ? "pakett-aktiivne" : "pakett"}
         onClick={() => uuendaValitud("mini")}>
             Mini
         </span>

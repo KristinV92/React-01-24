@@ -17,7 +17,7 @@ function App() {
       <Link to="/hind"><button>Hind</button></Link>
 
       <Routes>
-        <Route path="/" element= { <Navigate to="/ilmumine" />} />
+        <Route path="/" element= { <Navigate to="/ilmumine" /> } />
         <Route path="/ilmumine" element= { <Ilmumine /> } />
         <Route path="/kujundus" element= { <Kujundus /> } />
         <Route path="/muutmine" element= { <Muutmine /> } />
