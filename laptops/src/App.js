@@ -19,7 +19,7 @@ function App() {
         <button>Lisa sülearvuti</button>
       </Link>
 <Routes>
-<Route path="" exact element={ <Avaleht /> } />
+<Route path="" exact element={ <Avaleht />} />
 <Route path="all" exact element={ <VaataArvuteid />} />
 <Route path="add" exact element={ <LisaArvuti />} />
 </Routes>
