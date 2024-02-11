@@ -30,13 +30,13 @@
     font-weight: 600;
   }
   
-  .sidebarItem > img {
+  .sidebarImg{
     margin-top: 15px;
     width: 250px;
     height: 250px;
   }
   
-  .sidebarItem > p {
+  .sidebarP  {
     padding: 30px;
   }
   

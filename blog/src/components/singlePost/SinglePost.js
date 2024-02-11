@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import "./singlePost.css";
 
 function SinglePost() {
@@ -11,52 +10,20 @@ function SinglePost() {
         alt=""
       />
       <h1 className="singlePostTitle">
-        Lorem ipsum dolor
+        Thank you very much
         <div className="singlePostEdit">
           <i className="singlePostIcon far fa-edit"></i>
           <i className="singlePostIcon far fa-trash-alt"></i>
         </div>
       </h1>
       <div className="singlePostInfo">
-        <span>
-          Author:
-          <b className="singlePostAuthor">
-            <Link className="link" to="/posts?username=Safak">
-              Safak
-            </Link>
-          </b>
-        </span>
-        <span>1 day ago</span>
+        <span className="singlePostAuthor">Author:<b>Kristin</b></span>
+        <span className="singlePostDate">1 day ago</span>
       </div>
       <p className="singlePostDesc">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste error
-        quibusdam ipsa quis quidem doloribus eos, dolore ea iusto impedit!
-        Voluptatum necessitatibus eum beatae, adipisci voluptas a odit modi
-        eos! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
-        error quibusdam ipsa quis quidem doloribus eos, dolore ea iusto
-        impedit! Voluptatum necessitatibus eum beatae, adipisci voluptas a
-        odit modi eos! Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit. Iste error quibusdam ipsa quis quidem doloribus eos, dolore ea
-        iusto impedit! Voluptatum necessitatibus eum beatae, adipisci voluptas
-        a odit modi eos! Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit. Iste error quibusdam ipsa quis quidem doloribus eos, dolore ea
-        iusto impedit! Voluptatum necessitatibus eum beatae, adipisci voluptas
-        a odit modi eos! Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit. Iste error quibusdam ipsa quis quidem doloribus eos, dolore ea
-        iusto impedit! Voluptatum necessitatibus eum beatae, adipisci voluptas
-        a odit modi eos!
-        <br />
-        <br />
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste error
-        quibusdam ipsa quis quidem doloribus eos, dolore ea iusto impedit!
-        Voluptatum necessitatibus eum beatae, adipisci voluptas a odit modi
-        eos! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iste
-        error quibusdam ipsa quis quidem doloribus eos, dolore ea iusto
-        impedit! Voluptatum necessitatibus eum beatae, adipisci voluptas a
-        odit modi eos! Lorem, ipsum dolor sit amet consectetur adipisicing
-        elit. Iste error quibusdam ipsa quis quidem doloribus eos, dolore ea
-        iusto impedit! Voluptatum necessitatibus eum beatae, adipisci voluptas
-        a odit modi eos! Lorem, ipsum dolor sit amet consectetur.
+      Maintaining good health involves a balanced approach that encompasses physical activity, nutritious eating habits, adequate rest, and stress management.
+      Prioritizing preventive care, regular check-ups, and seeking medical attention when necessary are crucial components of a healthy lifestyle.
+      By adopting these practices, individuals can enhance their overall well-being and quality of life.
       </p>
     </div>
   </div>

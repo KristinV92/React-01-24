@@ -22,16 +22,9 @@ function Write() {
           />
         </div>
         <div className="writeFormGroup">
-          <textarea
-            className="writeInput writeText"
-            placeholder="Tell your story..."
-            type="text"
-            autoFocus={true}
-          />
+          <textarea className="writeInput writeText" placeholder="Tell your story..."type="text"></textarea>
         </div>
-        <button className="writeSubmit" type="submit">
-          Publish
-        </button>
+        <button className="writeSubmit">Publish</button>
       </form>
     </div>
   )
