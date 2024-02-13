@@ -90,7 +90,11 @@ function App() {
         <Route path='loader' element= { <Loader /> } />
       </Routes>
 
-      <ToastContainer />
+      <ToastContainer 
+      position="bottom-right"
+      autoClose={3500}
+      theme="dark"
+      />
     </div>
   
   );
