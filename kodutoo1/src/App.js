@@ -1,5 +1,6 @@
 import './App.css';
 import { Link, Route, Routes } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 import Avaleht from './pages/Avaleht';
 import Kontakt from './pages/Kontakt';
 import Meist from './pages/Meist';
@@ -16,13 +17,33 @@ function App() {
   const paroolRef = useRef();
 
   const logiSisse = () => {
-    if (paroolRef.current.value === "123") {
+    if (paroolRef.current.value.length <8) {
+      toast.error("Liiga lühike");
+      return;
+    } 
+    if (paroolRef.current.value.toLowerCase() === paroolRef.current.value) {
+      toast.error("Peab sisaldama suurt tähte");
+      return;
+    } 
+    if (paroolRef.current.value.toUpperCase() === paroolRef.current.value) {
+      toast.error("Peab sisaldama väikest tähte");
+      return;
+    } 
+    if (paroolRef.current.value.includes("%") === false) {
+      toast.error("Peab sisaldama protsenti");
+      return;
+    } 
+    if (paroolRef.current.value === "123"){
     muudaSisselogitud("jah");
     muudaSonum(kasutajaNimiRef.current.value + ", oled sisselogitud");
-  } else {
+    toast.success("Oled sisselogitud!");
+    return;
+  } 
     muudaSonum("Vale parool");
+    toast.error("Ei ole sisselogitud, vale parool");
+   return;
   }
-  }
+  
   const logiValja = () => {
     muudaSisselogitud("ei");
     muudaSonum("");
@@ -68,6 +89,8 @@ function App() {
         <Route path='leht' element= { <Leht /> } />
         <Route path='loader' element= { <Loader /> } />
       </Routes>
+
+      <ToastContainer />
     </div>
   
   );
