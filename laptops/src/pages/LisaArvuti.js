@@ -8,8 +8,21 @@ function LisaArvuti() {
 function addProduct (){
   setMessage("Arvuti lisatud");
   uuendaN2itaNuppu(false);
-  toast.success("Arvuti lisatud!")
-}
+  toast.success("Arvuti lisatud!", {
+    style: {
+      border: '2px solid black',
+      padding: '10px',
+      color: 'green',
+      duration: 4000
+    },
+    iconTheme: {
+      primary: 'green',
+      secondary: 'white',
+    }
+  }
+    )
+
+  }
   return (
     <div>
      <div>Sõnum: {message}</div>
