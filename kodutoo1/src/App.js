@@ -18,35 +18,30 @@ function App() {
 
   const logiSisse = () => {
     if (paroolRef.current.value.length <8) {
-      toast.error("Liiga lühike");
+      toast.error("Liiga lühike parool");
       return;
     } 
     if (paroolRef.current.value.toLowerCase() === paroolRef.current.value) {
-      toast.error("Peab sisaldama suurt tähte");
+      toast.error("Parool peab sisaldama suurt tähte");
       return;
     } 
     if (paroolRef.current.value.toUpperCase() === paroolRef.current.value) {
-      toast.error("Peab sisaldama väikest tähte");
+      toast.error("Parool peab sisaldama väikest tähte");
       return;
     } 
     if (paroolRef.current.value.includes("%") === false) {
-      toast.error("Peab sisaldama protsenti");
+      toast.error("Parool peab sisaldama protsenti");
       return;
     } 
-    if (paroolRef.current.value === "123"){
+   
     muudaSisselogitud("jah");
     muudaSonum(kasutajaNimiRef.current.value + ", oled sisselogitud");
-    toast.success("Oled sisselogitud!");
-    return;
-  } 
-    muudaSonum("Vale parool");
-    toast.error("Ei ole sisselogitud, vale parool");
-   return;
+    toast.success(kasutajaNimiRef.current.value + ", oled sisselogitud");
   }
   
   const logiValja = () => {
     muudaSisselogitud("ei");
-    muudaSonum("");
+    toast.success("Oled välja logitud!");
   }
 
   return (
