@@ -40,14 +40,16 @@ import { useState } from 'react'
 // import import { useState } from "react"  import { useState } from 'react'
 
 function Avaleht() {
-  const [kogus, uuendaKogus] = useState(0); //kogus, summa, kogusumma, hind
+  const [kogus, uuendaKogus] = useState(Number(localStorage.getItem("kogus")) || 0); //kogus, summa, kogusumma, hind
   const [sonum,uuendaSonum] = useState("Uuenda kogust!"); //postiindeks, isikukood, telefoninumber, nime, e-mail
   const [laigitud, uuendaLaigitud] = useState(false); //makstud, sisselogitud, tellitud, registreerunud, täisealine
   // const date = new Date(); tänane kuupäev
 
 function nulli () {
+  console.log("Nulli funktsiooni käivitus")
   uuendaKogus(0);
   uuendaSonum("Nullisid koguse!");
+  localStorage.setItem("kogus", "0");
 }
 
 // const nulli = () => {
@@ -63,12 +65,23 @@ function nulli () {
 function vahenda () {
   uuendaKogus(kogus - 1 );
   uuendaSonum("Vähendasid kogust!");
+  localStorage.setItem("kogus", kogus - 1);
   }
 
 function suurenda () {
     uuendaKogus(kogus + 1 );
     uuendaSonum("Suurendasid kogust!");
+    localStorage.setItem("kogus", kogus + 1);
   }
+
+  // keel | "ee"
+  // keel | "ru"
+  // keel | "en"
+
+  // onTume | "jah"
+  // onTume | "ei"
+
+  // kogus | "1"
 
   // !laigitud --> keerab kahendväärtuse (boolean) vastupidi
   //laigitud väärtus enne false saab väärtuseks true
@@ -86,7 +99,7 @@ function suurenda () {
       <br /><br />
       {kogus > 0 && <button onClick={nulli} >Tagasi nulli</button>}
       <button disabled={kogus === 0} onClick={vahenda} >-</button>
-      <span>{kogus}</span>
+      <span className={kogus >= 10 ? "kuldne" : null}>{kogus}</span>
       <button onClick={suurenda}>+</button>
     </div>
   )

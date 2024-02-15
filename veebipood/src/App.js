@@ -9,14 +9,30 @@ import LisaToode from './pages/LisaToode';
 import Ostukorv from './pages/Ostukorv';
 import Seaded from './pages/Seaded';
 import NotFound from './pages/NotFound';
+import { useState } from 'react';
+
 
 function App() {
+  const [tume, uuendaTume] = useState(localStorage.getItem("onTume") === "jah");
+
+  const tumedaks = () => {
+    uuendaTume(true);
+    localStorage.setItem("onTume", "jah");
+    // console.log()  logi konsooli
+    // localStorage.setItem  pane lokaalmällu
+  }
+
+  const heledaks = () => {
+    uuendaTume(false);
+    localStorage.setItem("onTume", "ei");
+  }
+
   return (
-    <div className="App">
+    <div className={tume === true ? "App-dark" : "App"}>
       <div className="nav"> 
         <Link to="/avaleht"> 
-        <img className="pilt" src=" /logo.png" alt="Nobe elektriauto" />
-      </Link>
+          <img className="pilt" src=" /logo.png" alt="Nobe elektriauto" />
+        </Link>
       <div>
       <Link  className="navlink" to="/esindused">
         <img src="/esindus.svg" alt="" />
@@ -41,7 +57,10 @@ function App() {
         <span>Seaded</span>
       </Link>
       </div>
-      <div>s</div>
+      <div>
+        <button onClick={tumedaks}>Tume</button>
+        <button onClick={heledaks}>Hele</button>
+      </div>
      </div>
     
 
