@@ -9,6 +9,7 @@ import { useState } from 'react';
 import { useRef } from 'react';
 import Leht from './pages/Leht';
 import Loader from './pages/Loader';
+import Logimine from './pages/Logimine';
 
 function App() {
   const [sisselogitud, muudaSisselogitud] = useState("ei");
@@ -17,7 +18,7 @@ function App() {
   const paroolRef = useRef();
 
   const logiSisse = () => {
-    if (paroolRef.current.value.length <8) {
+    if (paroolRef.current.value.length < 8 ) {
       toast.error("Liiga lühike parool");
       return;
     } 
@@ -75,6 +76,9 @@ function App() {
       <Link to="loader">
         <button>Loader</button>
       </Link>
+      <Link to="logimine">
+        <button>Logi sisse</button>
+      </Link>
 
       <Routes>
         <Route path='' element={ <Avaleht />} />
@@ -83,6 +87,7 @@ function App() {
         <Route path='seaded' element={ <Seaded /> } />
         <Route path='leht' element= { <Leht /> } />
         <Route path='loader' element= { <Loader /> } />
+        <Route path='logimine' element= { <Logimine /> } />
       </Routes>
 
       <ToastContainer 
