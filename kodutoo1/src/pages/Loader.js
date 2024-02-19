@@ -4,7 +4,7 @@ function Loader() {
     const [kasLaeb, uuendaLaadimist] = useState(true);
   return (
     <div>
-     {kasLaeb === true && <div class="lds-ripple"><div></div><div></div></div>}
+     {kasLaeb === true && <div className="lds-ripple"><div></div><div></div></div>}
      <button onClick={() => uuendaLaadimist(false)}>Lõpeta laadimine</button>
     </div>
   )

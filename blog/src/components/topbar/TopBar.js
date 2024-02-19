@@ -1,8 +1,9 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./topbar.css";
 
 function TopBar() {
-  const user = false;
+  const [user, setUser] = useState(false);
   return (
     <div className="top">
       <div className="topLeft">
@@ -23,7 +24,7 @@ function TopBar() {
           <li className="topListItem">
             <Link className="link" to="/write">WRITE</Link>
           </li>
-          <li className="topListItem">
+          <li className="topListItem" onClick={() => setUser(false)}>
              {user && "LOGOUT"}
           </li>
         </ul>
@@ -36,7 +37,8 @@ function TopBar() {
         ) : (
           <ul className="topList">
             <li className="topListItem">
-              <Link className="link" to="/login">LOGIN</Link>
+              {/* <Link className="link" to="/login">LOGIN</Link> */}
+              <span className="link" onClick={() => setUser(true)}>LOGIN</span>
             </li>
             <li className="topListItem">
               <Link className="link" to="/register">REGISTER</Link>

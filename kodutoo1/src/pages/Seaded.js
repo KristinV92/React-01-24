@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function Seaded() {
-  const [kujundus, muudaKujundus] = useState(localStorage.getItem("veebilehe_kujundus"));
+  const [kujundus, muudaKujundus] = useState(localStorage.getItem("veebilehe_kujundus") || "light_mode");
 
   const tumeLeht = () => {
     localStorage.setItem("veebilehe_kujundus", "dark_mode");

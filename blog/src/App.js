@@ -8,12 +8,13 @@ import Write from "./pages/write/Write";
 import { BrowserRouter as Router, Routes, Route, } from "react-router-dom";
 
 function App() {
-  const currentUser = false;
+  const currentUser = true;
   return (
     <Router>
       <TopBar />
+
       <Routes>
-        <Route exact path="/" element= {<Homepage />}></Route>
+        <Route path="/" element= {<Homepage />}></Route>
         <Route path="/posts" element= {<Homepage />}></Route>
         <Route path="/register" element={currentUser ? <Homepage /> : <Register />}></Route>
         <Route path="/login" element={currentUser ? <Homepage /> : <Login />}></Route>

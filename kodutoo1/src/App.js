@@ -12,7 +12,7 @@ import Loader from './pages/Loader';
 import Logimine from './pages/Logimine';
 
 function App() {
-  const [sisselogitud, muudaSisselogitud] = useState("ei");
+  const [sisselogitud, muudaSisselogitud] = useState(false);
   const [sonum, muudaSonum] = useState("");
   const kasutajaNimiRef = useRef();
   const paroolRef = useRef();
@@ -35,28 +35,28 @@ function App() {
       return;
     } 
    
-    muudaSisselogitud("jah");
+    muudaSisselogitud(true);
     muudaSonum(kasutajaNimiRef.current.value + ", oled sisselogitud");
     toast.success(kasutajaNimiRef.current.value + ", oled sisselogitud");
   }
   
   const logiValja = () => {
-    muudaSisselogitud("ei");
+    muudaSisselogitud(false);
     toast.success("Oled välja logitud!");
   }
 
   return (
     <div className="App">
       <div>{sonum}</div>
-      { sisselogitud === "ei" && <div>
+      { sisselogitud === false && <div>
         <label>Kasutajanimi</label> <br />
         <input ref={kasutajaNimiRef} type="text" /><br />
         <label>Parool</label> <br />
         <input ref={paroolRef} type="password" /><br />
       </div>}
 
-      { sisselogitud === "ei" && <button onClick={logiSisse}>Logi sisse</button>}
-      { sisselogitud === "jah" && <button onClick={logiValja}>Logi välja</button>}
+      { sisselogitud === false && <button onClick={logiSisse}>Logi sisse</button>}
+      { sisselogitud === true && <button onClick={logiValja}>Logi välja</button>}
  
       <Link to="/">
           <button>Avaleht</button>
