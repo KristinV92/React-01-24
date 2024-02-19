@@ -10,7 +10,9 @@ import Ostukorv from './pages/Ostukorv';
 import Seaded from './pages/Seaded';
 import NotFound from './pages/NotFound';
 import { useState } from 'react';
-
+import Hinnad from './pages/Hinnad';
+import Tootajad from './pages/Tootajad';
+import Tooted from './pages/Tooted';
 
 function App() {
   const [tume, uuendaTume] = useState(localStorage.getItem("onTume") === "jah");
@@ -56,6 +58,15 @@ function App() {
       <Link className="navlink" to="/seaded">
         <span>Seaded</span>
       </Link>
+      <Link className="navlink" to="/hinnad">
+        <span>Hinnad</span>
+      </Link>
+      <Link className="navlink" to="/tooted">
+        <span>Tooted</span>
+      </Link>
+      <Link className="navlink" to="/tootajad">
+        <span>Töötajad</span>
+      </Link>
       </div>
       <div>
         <button onClick={tumedaks}>Tume</button>
@@ -73,6 +84,9 @@ function App() {
       <Route path="ostukorv" element={ <Ostukorv />} />
       <Route path="seaded" element={ <Seaded />} />
       <Route path="*" element={ <NotFound />} />
+      <Route path="hinnad" element={ <Hinnad />} />
+      <Route path="tootajad" element={ <Tootajad />} />
+      <Route path="tooted" element={ <Tooted />} />
     </Routes>
 
     </div>
