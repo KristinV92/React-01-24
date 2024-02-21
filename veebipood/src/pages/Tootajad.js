@@ -18,15 +18,22 @@ function Tootajad() {
         tootajad.sort();
         uuendaTootajad(tootajad.slice());
     }
+
   return (
     <div>
+    {tootajad.length > 0 &&
+    <div>
+        <button onClick={sorteeriAZ} >Sorteeri A-Z</button> 
         {tootajad.map(tootaja => <div>{tootaja}</div>)}
-        <button onClick={sorteeriAZ} >Sorteeri A-Z</button>
+        <div><h4>Töötajaid on: {tootajad.length}</h4></div>
+        <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
+    </div>}
+
+    {tootajad.length === 0 &&  <div>Ühtegi töötajat pole nähtaval</div>}
        
-        {tootajad.length < 0 &&  
-        <div>Pole ühtegi töötajat nähtaval</div>}
-        <div>Töötajaid on: {tootajad.length} </div>
     </div>
+        
+        
   )
 }
 

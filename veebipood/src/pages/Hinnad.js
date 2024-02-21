@@ -19,15 +19,17 @@ function Hinnad() {
     }
   return (
     <div>
-        {hinnad.map(hinnad => <div>{hinnad}</div>)}
-        
+      { hinnad.length > 0 &&
+      <div>
         <button onClick={sorteeriAZ} >Sorteeri 1-1500</button>
-         
-        
-        {hinnad.length < 0 && 
+        {hinnad.map(hinnad => <div>{hinnad}</div>)}
+        <div><h4>Hindasid on: {hinnad.length} </h4></div>
+        <button onClick={() => uuendaHinnad([])} >Eemalda hinnad</button>
+      </div>}
+
+        {hinnad.length === 0 && 
         <div>Pole ühtegi hinda nähtaval</div>}
-        <div>Hindasid on: {hinnad.length} </div>
-        <button onClick={() => uuendaHinnad([])} >Tühjenda</button>
+    
     </div>
   )
 }

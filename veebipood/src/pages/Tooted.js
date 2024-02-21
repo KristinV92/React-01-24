@@ -18,18 +18,14 @@ function Tooted() {
     }
   return (
     <div>
-        { tooted.length === 0 && <div> Tooteid on 0</div>}
-        <button onClick={() => uuendaTooted(["Nobe", "BMW", "Tesla"])} >Jäta alles Nobe, BMW, Tesla</button>
-
-        {tooted.length > 0 &&
-          <div>
-            <div>Tooteid on {tooted.length} (tk) </div>
-            <button onClick={() => uuendaTooted([])} >Tühjenda</button>
-        </div>}
-
-        {tooted.map(toode => <div>{toode}</div>)}
+      {tooted.length >0 &&
+    <div>
         <button onClick={sorteeriAZ} >Sorteeri A-Z</button>
-
+        {tooted.map(toode => <div>{toode}</div>)}
+        <div><h4>Tooteid on {tooted.length} (tk)</h4></div>
+        <button onClick={() => uuendaTooted ([])}>Eemalda tooted</button>
+    </div>}
+      {tooted.length === 0 && <div>Ühtegi toodet pole nähtavalt</div>}
     </div>
   )
 }

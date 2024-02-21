@@ -4,9 +4,11 @@ function Tagasiside() {
     const [tagasisided, määraTagasisided] = useState(["Oli hea", "Huvitav", "Teistsugune", "Põnev"])
 
   return (
-  <div>Tagasisided:
+  <div>
+    Tagasisided:
     {tagasisided.map(element => <div>{element}</div>)}
-  </div>)
+  </div>
+  )
 }
 
 export default Tagasiside;
