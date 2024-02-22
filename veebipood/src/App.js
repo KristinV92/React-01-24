@@ -35,59 +35,59 @@ function App() {
         <Link to="/avaleht"> 
           <img className="pilt" src=" /logo.png" alt="Nobe elektriauto" />
         </Link>
-      <div>
-      <Link  className="navlink" to="/esindused">
-        <img src="/esindus.svg" alt="" />
-        <span>Esindused</span>
-      </Link>
-      <Link className="navlink" to="/arikliendile">
-      <img src="/ari.svg" alt="" />
-        <span>Ärikliendile</span>
-      </Link>
-      <Link className="navlink" to="/osta-kinkekaart">
-      <img src="/kinkekaart.svg" alt="" />
-        <span>Kinkekaart</span>
-      </Link>
-      <Link className="navlink" to="/lisa-toode">
-        <span>Lisa toode</span>
-      </Link>
-      <Link className="navlink" to="/ostukorv">
-      <img src="/shopping.svg" alt="" />
-        <span>Ostukorv</span>
-      </Link>
-      <Link className="navlink" to="/seaded">
-        <span>Seaded</span>
-      </Link>
-      <Link className="navlink" to="/hinnad">
-        <span>Hinnad</span>
-      </Link>
-      <Link className="navlink" to="/tooted">
-        <span>Tooted</span>
-      </Link>
-      <Link className="navlink" to="/tootajad">
-        <span>Töötajad</span>
-      </Link>
+        <div>
+        <Link  className="navlink" to="/esindused">
+          <img src="/esindus.svg" alt="" />
+          <span>Esindused</span>
+        </Link>
+        <Link className="navlink" to="/arikliendile">
+        <img src="/ari.svg" alt="" />
+          <span>Ärikliendile</span>
+        </Link>
+        <Link className="navlink" to="/osta-kinkekaart">
+        <img src="/kinkekaart.svg" alt="" />
+          <span>Kinkekaart</span>
+        </Link>
+        <Link className="navlink" to="/lisa-toode">
+          <span>Lisa toode</span>
+        </Link>
+        <Link className="navlink" to="/ostukorv">
+        <img src="/shopping.svg" alt="" />
+          <span>Ostukorv</span>
+        </Link>
+        <Link className="navlink" to="/seaded">
+          <span>Seaded</span>
+        </Link>
+        <Link className="navlink" to="/hinnad">
+          <span>Hinnad</span>
+        </Link>
+        <Link className="navlink" to="/tooted">
+          <span>Tooted</span>
+        </Link>
+        <Link className="navlink" to="/tootajad">
+          <span>Töötajad</span>
+        </Link>
+        </div>
+        <div>
+          <button onClick={tumedaks}>Tume</button>
+          <button onClick={heledaks}>Hele</button>
+        </div>
       </div>
-      <div>
-        <button onClick={tumedaks}>Tume</button>
-        <button onClick={heledaks}>Hele</button>
-      </div>
-     </div>
     
 
-    <Routes>
-      <Route path="avaleht" element={ <Avaleht />} />
-      <Route path="esindused" element={ <Esindused />} />
-      <Route path="arikliendile" element={ <Ariklient />} />
-      <Route path="osta-kinkekaart" element={ <Kinkekaart />} />
-      <Route path="lisa-toode" element={ <LisaToode />} />
-      <Route path="ostukorv" element={ <Ostukorv />} />
-      <Route path="seaded" element={ <Seaded />} />
-      <Route path="*" element={ <NotFound />} />
-      <Route path="hinnad" element={ <Hinnad />} />
-      <Route path="tootajad" element={ <Tootajad />} />
-      <Route path="tooted" element={ <Tooted />} />
-    </Routes>
+      <Routes>
+        <Route path="avaleht" element={ <Avaleht />} />
+        <Route path="esindused" element={ <Esindused />} />
+        <Route path="arikliendile" element={ <Ariklient />} />
+        <Route path="osta-kinkekaart" element={ <Kinkekaart />} />
+        <Route path="lisa-toode" element={ <LisaToode />} />
+        <Route path="ostukorv" element={ <Ostukorv />} />
+        <Route path="seaded" element={ <Seaded />} />
+        <Route path="hinnad" element={ <Hinnad />} />
+        <Route path="tootajad" element={ <Tootajad />} />
+        <Route path="tooted" element={ <Tooted />} />
+        <Route path="*" element={ <NotFound />} />
+      </Routes>
 
     </div>
   );

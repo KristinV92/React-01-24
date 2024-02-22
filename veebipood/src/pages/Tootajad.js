@@ -12,20 +12,87 @@ import { useState } from 'react'
 
 function Tootajad() {
 
-    const [tootajad, uuendaTootajad] = useState(["Urmet", "Kaido", "Liina", "Maiki"]);
+    const [tootajad, uuendaTootajad] = useState(["Urmet", "Kaido", "Liina", "Maiki", "Heidi", "Epp", "Kaire", "Anet", "Maarja"]);
+// sorteeritakse KAS sõnu või numbreid
+// kui võrdlen sõnu (tähti) --> a.localeCompare(b)
+// kui võrdlen numbreid     --> a - b
+
+    const originaali = () => {
+      uuendaTootajad (["Urmet", "Kaido", "Liina", "Maiki", "Heidi", "Epp", "Kaire", "Anet", "Maarja"]);
+    }
     
     const sorteeriAZ = () => {
-        tootajad.sort();
+        tootajad.sort((a,b) => a.localeCompare(b));
         uuendaTootajad(tootajad.slice());
+    }
+
+    const sorteeriZA = () => {
+      tootajad.sort((a,b) => b.localeCompare(a));
+      uuendaTootajad(tootajad.slice());
+    }
+
+    const sorteeriTahedKasvavalt = () => {
+      tootajad.sort((a, b) => a.length - b.length);
+      uuendaTootajad(tootajad.slice());
+    }
+
+    const sorteeriTahedKahanevalt = () => {
+      tootajad.sort((a, b) => b.length - a.length);
+      uuendaTootajad(tootajad.slice());
+    }
+
+    const sorteeriKolmasTahtAZ = () => {                 //   01234     01234           01234     01234
+      tootajad.sort((a,b) => a[2].localeCompare(b[2])); //1. a: Urmet  b: Kaido   2. a: Kaido  b: Liina
+      uuendaTootajad(tootajad.slice());
+    }
+
+    const filtreeriTgaLoppev = () => {
+      const vastus = tootajad.filter(t => t.endsWith("t") === true);
+      uuendaTootajad(vastus);
+    }
+
+    const filtreeri5Tahelised = () => {
+      const vastus = tootajad.filter(tootaja => tootaja.length === 5);
+      uuendaTootajad(vastus);
+    }
+
+    const filtreeriVahemKui5Tahte = () => {
+      const vastus = tootajad.filter(element => element.length < 5);
+      uuendaTootajad(vastus);
+    }
+
+    const filtreeri3sTahtI = () => {
+      const vastus = tootajad.filter(e => e[2] === "i");
+      uuendaTootajad(vastus);
+    }
+
+    const filtreeriLyhendigaAi = () => {
+      const vastus = tootajad.filter(yksTootaja => yksTootaja.includes("ai") === true );
+      uuendaTootajad(vastus);
     }
 
   return (
     <div>
+       <button onClick={originaali}>Tagasi originaali</button>
+        <br /> <br />
     {tootajad.length > 0 &&
     <div>
         <button onClick={sorteeriAZ} >Sorteeri A-Z</button> 
+        <button onClick={sorteeriZA} >Sorteeri Z-A</button> 
+        <button onClick={sorteeriTahedKasvavalt} >Sorteeri tähed kasvavalt</button> 
+        <button onClick={sorteeriTahedKahanevalt} >Sorteeri tähed kahanevalt</button> 
+        <button onClick={sorteeriKolmasTahtAZ} >Sorteeri kolmas täht A-Z</button> 
+        <br /><br />
+        <button onClick={filtreeriTgaLoppev}>Filtreeri 't'ga lõppevad</button> 
+        <button onClick={filtreeri5Tahelised}>Filtreeri täpselt 5 tähelised</button>
+        <button onClick={filtreeriVahemKui5Tahte}>Filtreeri vähem kui 5 tähelised</button>
+        <button onClick={filtreeri3sTahtI}>Filtreeri kellel on kolmas täht 'i'</button>
+        <button onClick={filtreeriLyhendigaAi}>Filtreeri kellel on sees lühend 'ai'</button>
+
+
+
         {tootajad.map(tootaja => <div>{tootaja}</div>)}
-        <div><h4>Töötajaid on: {tootajad.length}</h4></div>
+        <h4>Töötajaid on: {tootajad.length}</h4>
         <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
     </div>}
 
@@ -38,3 +105,11 @@ function Tootajad() {
 }
 
 export default Tootajad
+
+// //const [words, setWords] = useState(['spray', 'elite', 'exuberant', 'destruction', 'present']);
+// const words = ['spray', 'elite', 'exuberant', 'destruction', 'present'];
+
+// const result = words.filter((word) => word.startsWith("e"));
+
+// // setWords(result);
+// console.log(result);

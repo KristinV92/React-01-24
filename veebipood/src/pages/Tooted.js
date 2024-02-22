@@ -22,7 +22,7 @@ function Tooted() {
     <div>
         <button onClick={sorteeriAZ} >Sorteeri A-Z</button>
         {tooted.map(toode => <div>{toode}</div>)}
-        <div><h4>Tooteid on {tooted.length} (tk)</h4></div>
+        <h4>Tooteid on {tooted.length} (tk)</h4>
         <button onClick={() => uuendaTooted ([])}>Eemalda tooted</button>
     </div>}
       {tooted.length === 0 && <div>Ühtegi toodet pole nähtavalt</div>}
