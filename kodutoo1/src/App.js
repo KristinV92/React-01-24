@@ -10,6 +10,8 @@ import { useRef } from 'react';
 import Leht from './pages/Leht';
 import Loader from './pages/Loader';
 import Logimine from './pages/Logimine';
+import Books from './pages/Books';
+import Numbrid from './pages/Numbrid';
 
 function App() {
   const [sisselogitud, muudaSisselogitud] = useState(false);
@@ -79,6 +81,12 @@ function App() {
       <Link to="logimine">
         <button>Logi sisse</button>
       </Link>
+      <Link to="books">
+        <button>Books</button>
+      </Link>
+      <Link to="numbrid">
+        <button>Numbrid</button>
+      </Link>
 
       <Routes>
         <Route path='' element={ <Avaleht />} />
@@ -88,6 +96,8 @@ function App() {
         <Route path='leht' element= { <Leht /> } />
         <Route path='loader' element= { <Loader /> } />
         <Route path='logimine' element= { <Logimine /> } />
+        <Route path='books' element= { <Books /> } />
+        <Route path='numbrid' element= { <Numbrid /> } />
       </Routes>
 
       <ToastContainer 
