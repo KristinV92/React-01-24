@@ -75,7 +75,7 @@ function Numbrid() {
         <br /><br />
 
         <button onClick={originaal}>Tagasi originaali</button>
-        <br /> 
+        <br /><br />
 
         <button onClick={filtreeriSuuremadKui8}>Filtreeri suuremad kui 8</button>
         <button onClick={filtreeriVaiksemadKui10}>Filtreeri väiksemad kui 10</button>
