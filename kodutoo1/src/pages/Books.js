@@ -29,11 +29,6 @@ function Books() {
         books.sort((a, b) => a.split(' ').length - (b.split(' ').length));
         uuendaBooks(books.slice());
       }
-
-      // const sorteeriWordsByLength = () => {
-      //   const sortedWords = [...books].sort((a, b) => a.length - b.length);
-      //   uuendaBooks(sortedWords);
-      // }
   
       const sorteeriEelviimaseTaheJargi= () => {
         books.sort((a, b) => a.charCodeAt(a.length - 2) - b.charCodeAt(b.length - 2));
@@ -61,20 +56,23 @@ function Books() {
       }
       
       // const filtreeriRohkemKui3Sona = () => {
-        //ei saanud toimima
+      //   const vastus = books.filter(book => {
+      //     const sonadeArv = book.split(' ').length;
+      //     return sonadeArv >=3
+      //   });
+      //   uuendaBooks(vastus);
       // }
-  
-      const filtreeriEelviimaneTahtC = () => {
-        const vastus = books.filter(book => {
-          if (book.length >= 2) {
-            const eelviimaneTaht = book.charAt(book.length - 2);
-            return eelviimaneTaht.toLowerCase() === "c";
-          }
-          return false; 
-        });
+
+      const filtreeriRohkemKui3Sona = () => {
+        const vastus = books.filter(book => book.split(' ').length >= 3);
         uuendaBooks(vastus);
       }
-  
+
+      const filtreeriEelviimaneTahtC = () => {
+        const vastus = books.filter(book => book.charAt(book.length - 2) === "c");
+        uuendaBooks(vastus);
+      }
+      
   return (
     <div>
       <br /><br />
@@ -83,7 +81,6 @@ function Books() {
         <button onClick={sorteeriSonaPikkus}>Sorteeri sõna pikkuse järgi</button>
         <button onClick={sorteeriTeineTahtAZ}>Sorteeri teise tähe järgi A-Z</button>
         <button onClick={sorteeriSonadeArvuJargi}>Sorteeri sõnade arvu järgi</button>
-        {/* <button onClick={sorteeriWordsByLength}>Sorteeri sõnade arvu järgi</button> */}
         <button onClick={sorteeriEelviimaseTaheJargi}>Sorteeri eelviimase tähe järgi</button>
       <br /><br />
 
@@ -94,7 +91,7 @@ function Books() {
       <button onClick={filtreeriKeskelAnd}>Filtreeri kellel on sees lühend 'and'</button>
       <button onClick={filtreeriRohkemKui10Tahte}>Filtreeri rohkem kui 10 tähelised</button>
       <button onClick={filtreeriVahemKui7Tahte}>Filtreeri vähem kui 7 tähelised</button>
-      {/* <button onClick={filtreeriRohkemKui3Sona}>Filtreeri kolme või rohkema sõnalised</button> */}
+      <button onClick={filtreeriRohkemKui3Sona}>Filtreeri kolme või rohkema sõnalised</button>
       <button onClick={filtreeriEelviimaneTahtC }>Filtreeri kellel eelviimane täht on “C”</button>
    
         {books.map(x => <div>{x}</div>)}

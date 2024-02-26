@@ -25,8 +25,17 @@ const sorteeriAZ = () => {
     {linn === "Tallinn" &&
     <div>
      {keskused.map(keskus => <div>{keskus}</div>)}
+     {/* 
+     KOJU:
+     Kustutamise võimekus
+     Sama lõppu lisamise võimekus
+     Läbi inputi enda kirjutatu lüppu lisamise võimekus
+     Saab teha ainult Tallinnale, sest seal on .map()
+      */}
     </div>}
    
+ {/*  Hard-coded allpool */}
+
    {linn === "Tartu" && 
     <div>
       <button onClick={sorteeriAZ}>Sorteeri A-Z</button>

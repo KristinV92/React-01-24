@@ -8,11 +8,21 @@ function Numbrid() {
     }
 
 
-    const sorteeriKasvavalt = () => {
-        numbrid.sort((a, b) => a - b);
-        uuendaNumbrid(numbrid.slice());
-    }
+    // const sorteeriKasvavalt = () => {
+    //     numbrid.sort((a, b) => a - b);
+    //     uuendaNumbrid(numbrid.slice());
+    // }
 
+    // const sorteeriKasvavalt = () => {
+    //   const vastus =  [...numbrid].sort((a, b) => a - b);
+    //     uuendaNumbrid(vastus);
+    // }
+    
+     const sorteeriKasvavalt = () => {
+        numbrid.sort((a, b) => a - b);
+        uuendaNumbrid([...numbrid]);
+    }
+    
     const sorteeriKahanevalt = () => {
         numbrid.sort((a, b) => b - a);
         uuendaNumbrid(numbrid.slice());
@@ -49,21 +59,22 @@ function Numbrid() {
     }
   
     const filtreeriAlgavad1 = () => {
-        const vastus = numbrid.filter(y => {
-        const numStr = y.toString();
-        return numStr.startsWith('1');
-        });
+        const vastus = numbrid.filter(nr => nr.toString().startsWith('1'));
         uuendaNumbrid(vastus);
     }
 
-    const filtreeriSisaldavad3 = () => {
-            const vastus = numbrid.filter(s => {
-            const numStr = s.toString();
-            return numStr.includes('3');
-            });
-            uuendaNumbrid(vastus);
-    }
+    // const filtreeriSisaldavad3 = () => {
+    //         const vastus = numbrid.filter(s => {
+    //         const numStr = s.toString();
+    //         return numStr.includes('3');
+    //         });
+    //         uuendaNumbrid(vastus);
+    // }
 
+    const filtreeriSisaldavad3 = () => {
+        const vastus = numbrid.filter(number => number.toString().includes('3'));
+        uuendaNumbrid(vastus);
+    }
 
   return (
     <div>

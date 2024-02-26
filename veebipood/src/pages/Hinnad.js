@@ -34,16 +34,67 @@ function Hinnad() {
       uuendaHinnad(hinnad.slice());
     }
 
+    const lisaHind123 = () => {
+      hinnad.push(123);
+      uuendaHinnad(hinnad.slice());
+    }
+
+    const lisaHind = (lisatavHind) => {
+      hinnad.push(lisatavHind);
+      uuendaHinnad(hinnad.slice());
+    }
+
+    const kustutaEsimene = () =>{
+      hinnad.splice(0, 1); //esimene järjekorranumber, teine mitu tk tahan ühe nupuvajutusega kustutada
+      uuendaHinnad(hinnad.slice());
+    }
+
+    const kustutaTeine = () =>{
+      hinnad.splice(1, 1);
+      uuendaHinnad(hinnad.slice());
+    }
+
+    const kustutaKolmas = () =>{
+      hinnad.splice(2, 1);
+      uuendaHinnad(hinnad.slice());
+    }
+
+    const kustutaNeljas = () =>{
+      hinnad.splice(3, 1);
+      uuendaHinnad(hinnad.slice());
+    }
+
+    //kui siin on sulgude sisu täidetud, siis tuleb midagi onClick seest kaasa saata
+    const kustutaHind = (jrknr) =>{
+      hinnad.splice(jrknr, 1);
+      uuendaHinnad(hinnad.slice());
+    }
+
   return (
     <div>
       { hinnad.length > 0 &&
       <div>
         <button onClick={sorteeriAZ} >Sorteeri A-Z</button>
         <button onClick={sorteeriZA} >Sorteeri Z-A</button>
+
         <button onClick={sorteeriKasvavalt} >Sorteeri kasvavalt</button>
         <button onClick={sorteeriKahanevalt} >Sorteeri kahanevalt</button>
 
-        {hinnad.map(hinnad => <div>{hinnad}</div>)}
+        <br />
+        <button onClick={lisaHind123}>Lisa hind 123 lõppu juurde</button>
+        <br />
+        <button onClick={kustutaEsimene}>Kustuta esimene</button>
+        <button onClick={kustutaTeine}>Kustuta teine</button>
+        <button onClick={kustutaKolmas}>Kustuta kolmas</button>
+        <button onClick={kustutaNeljas}>Kustuta neljas</button>
+
+
+        {hinnad.map((hind, jrknr) => 
+          <div key={jrknr}>
+            {hind} 
+            <button onClick={() => kustutaHind(jrknr)}>x</button>
+            <button onClick={() => lisaHind(hind)}>Lisa</button>
+          </div>)}
         <h4>Hindasid on: {hinnad.length} </h4>
         <button onClick={() => uuendaHinnad([])} >Eemalda hinnad</button>
       </div>}
