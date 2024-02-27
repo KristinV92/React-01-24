@@ -82,11 +82,22 @@ function Tootajad() {
   // 1. Kustutamine (igaühele nupp)
   // 2. Igaühe lõppu lisamise võimekus
 
+    const kustutaTootaja =(index) => {
+      tootajad.splice(index, 1);
+      uuendaTootajad(tootajad.slice());
+    }
+
+    const lisaTootaja = (uusTootaja) => {
+      tootajad.push(uusTootaja);
+      uuendaTootajad(tootajad.slice());
+    }
+
+
   return (
     <div>
        <button onClick={originaali}>Tagasi originaali</button>
         <br /> <br />
-    {tootajad.length > 0 &&
+    {tootajad.length > 0 &&  // siin on length, et naha mitu Arrayd on e kui palju töötajaid on 
     <div>
         <button onClick={sorteeriAZ} >Sorteeri A-Z</button> 
         <button onClick={sorteeriZA} >Sorteeri Z-A</button> 
@@ -102,7 +113,11 @@ function Tootajad() {
 
 
 
-        {tootajad.map(tootaja => <div>{tootaja}</div>)}
+        {tootajad.map((tootaja, index) => <div>{tootaja}
+        <button onClick={() => kustutaTootaja(index)}>X</button>
+        <button onClick={() => lisaTootaja(tootaja)}>Lisa lõppu juurde</button>
+        </div>)}
+
         <h4>Töötajaid on: {tootajad.length}</h4>
         <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
     </div>}

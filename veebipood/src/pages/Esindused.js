@@ -1,4 +1,5 @@
-import { useState } from 'react'
+import { useRef } from "react";
+import { useState } from 'react';
 
 function Esindused() {
   // vasakul pool on muutuja, mille sees on muutuv väärtus
@@ -7,11 +8,29 @@ function Esindused() {
 const [linn,uuendaLinn] = useState("Pärnu");
 
 const [keskused, uuendaKeskused] = useState(["Ülemiste","Viimsi","Rocca al Mare","Magistrali","Vesse","Kristiine","Järveotsa"]);
+const nimiRef = useRef();
 
 const sorteeriAZ = () => {
   keskused.sort();
   uuendaKeskused(keskused.slice());
 }
+
+const kustutaTallinnaEsindused =(index) => {
+  keskused.splice(index, 1);
+  uuendaKeskused(keskused.slice());
+ }
+ 
+ const lisaTallinnaEsindused= (uusKeskus) => {
+   keskused.push(uusKeskus);
+   uuendaKeskused(keskused.slice());
+ }
+
+ const lisa = () => {
+  keskused.push(nimiRef.current.value);
+  uuendaKeskused(keskused.slice());
+}
+
+
   return (
     <div>
     <div>Esindused</div>
@@ -20,11 +39,20 @@ const sorteeriAZ = () => {
     <span className={linn === "Narva" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Narva")}>Narva(1)</span>
     <span className={linn === "TPärnu" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Pärnu")}>Pärnu(1)</span>
     <br /><br />
+
     <div>Aktiivne linn: {linn} </div>
 
     {linn === "Tallinn" &&
     <div>
-     {keskused.map(keskus => <div>{keskus}</div>)}
+      <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
+     {keskused.map((keskus, index) => <div>{keskus}
+     <button onClick={() => kustutaTallinnaEsindused(index)}>Kustuta</button>
+     <button onClick={() => lisaTallinnaEsindused(keskus)}>Lisa lõppu juurde</button>
+     </div>)}
+
+     <label>Uue esinduse nimi</label><br />
+     <input ref={nimiRef} type="text" />
+     <button onClick={lisa}>Lisa</button>
      {/* 
      KOJU:
      Kustutamise võimekus
@@ -33,6 +61,9 @@ const sorteeriAZ = () => {
      Saab teha ainult Tallinnale, sest seal on .map()
       */}
     </div>}
+
+
+
    
  {/*  Hard-coded allpool */}
 
