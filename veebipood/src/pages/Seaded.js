@@ -27,6 +27,7 @@ const sisestaEmail = () => {
   } else {
     muudaEmail(emailRef.current.value);
     toast.success("Email uuendatud!");
+    emailRef.current.value = "";
   }
 }
 
@@ -50,6 +51,7 @@ const sisestaAadress = () => {
 
   muudaAadress(aadressRef.current.value);
   toast.success("Aadress uuendatud!");
+  aadressRef.current.value = "";
   
 }
 
@@ -59,6 +61,7 @@ const sisestaTelefon = () => {
   } else {
     muudaTelefon(telefonRef.current.value);
     toast.success("Telefon uuendatud!");
+    telefonRef.current.value = "";
   }
 }
 

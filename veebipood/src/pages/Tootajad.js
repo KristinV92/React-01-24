@@ -72,6 +72,20 @@ function Tootajad() {
       uuendaTootajad(vastus);
     }
 
+//Kodus:
+//Tõsta Töötaja lisamine uue faili, täpselt nagu LisaToode.js/LisaHind.js on erlaid
+// 1. Tegema LisaTootaja.js fail
+// 2. App.js sees siduma URL ja failiga
+// 3. Tegema sinna sattumiseks lingi
+// 4. Tõstma siin oleva JavaScripti LisaTootaja.js faili (useRef import ka)
+// 5. Impordi TootajadJSON fail
+// 6. Asendan kuhu ma juurde lisan --> nüüd lisan faili
+// 7. Kustutan ära HTMLi uuenduse (muuda/uuenda)
+// 7. Tõstma siin olema HTMLi LisaTootaja.js faili
+// 8. LISAKS: Tee kontrollid (väikse tähega ei saa, tühjaks ei saa jätta, vähemalt 3 tähemärki)
+// 9. Sama asi Esindused.js osas
+//  Tehtud sama asi Tooted ja Hinnad osas
+
     const nimiRef = useRef();
 
     const lisa = () =>{

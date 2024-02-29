@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import hinnadFailist from "../data/hinnad.json";
 
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
 // URL-le sattumise võimekus läbi <Link>
@@ -11,7 +12,7 @@ import { useState } from 'react'
 // Kui pole ühtegi töötajat, siis kuva <div>Pole ühtegi hinda nähtaval</div>
 
 function Hinnad() {
-    const [hinnad, uuendaHinnad] = useState([312, 1234, 56, 88, 8, 234, 12]);
+    const [hinnad, uuendaHinnad] = useState(hinnadFailist);
    
     const sorteeriAZ = () => {
       hinnad.sort((a, b) => a.toString().localeCompare(b.toString()));
@@ -70,6 +71,11 @@ function Hinnad() {
       uuendaHinnad(hinnad.slice());
     }
 
+    const filtreeriPaarisArvud = () => {
+      const vastus = hinnad.filter(hind => hind % 2 === 0);
+      uuendaHinnad(vastus);
+    }
+
   return (
     <div>
       { hinnad.length > 0 &&
@@ -79,14 +85,15 @@ function Hinnad() {
 
         <button onClick={sorteeriKasvavalt} >Sorteeri kasvavalt</button>
         <button onClick={sorteeriKahanevalt} >Sorteeri kahanevalt</button>
-
+        <br /><br />
+        <button onClick={filtreeriPaarisArvud}> Jäta alles paarisarvud</button>
         <br />
         <button onClick={lisaHind123}>Lisa hind 123 lõppu juurde</button>
         <br />
         <button onClick={kustutaEsimene}>Kustuta esimene</button>
-        <button onClick={kustutaTeine}>Kustuta teine</button>
-        <button onClick={kustutaKolmas}>Kustuta kolmas</button>
-        <button onClick={kustutaNeljas}>Kustuta neljas</button>
+        <button disabled={hinnad.length < 2} onClick={kustutaTeine}>Kustuta teine</button>
+        <button disabled={hinnad.length < 3} onClick={kustutaKolmas}>Kustuta kolmas</button>
+        {hinnad.length >=4 && <button onClick={kustutaNeljas}>Kustuta neljas</button>}
 
 
         {hinnad.map((hind, jrknr) => 
@@ -98,6 +105,9 @@ function Hinnad() {
         <h4>Hindasid on: {hinnad.length} </h4>
         <button onClick={() => uuendaHinnad([])} >Eemalda hinnad</button>
       </div>}
+
+    
+
 
         {hinnad.length === 0 && 
         <div>Pole ühtegi hinda nähtaval</div>}
