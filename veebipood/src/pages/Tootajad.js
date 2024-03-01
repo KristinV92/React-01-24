@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState } from 'react'
 import tootajadJSON from "../data/tootajad.json";
 
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
@@ -86,12 +86,7 @@ function Tootajad() {
 // 9. Sama asi Esindused.js osas
 //  Tehtud sama asi Tooted ja Hinnad osas
 
-    const nimiRef = useRef();
-
-    const lisa = () =>{
-      tootajad.push(nimiRef.current.value);
-      uuendaTootajad(tootajad.slice());
-    }
+    
   // Tootajad.js vaates kodus:
   // 1. Kustutamine (igaühele nupp)
   // 2. Igaühe lõppu lisamise võimekus
@@ -135,10 +130,6 @@ function Tootajad() {
         <h4>Töötajaid on: {tootajad.length}</h4>
         <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
     </div>}
-
-    <label>Uue töötaja nimi</label><br />
-    <input ref={nimiRef}type="text" /><br />
-    <button onClick={lisa}>Lisa</button><br />
 
     {tootajad.length === 0 &&  <div>Ühtegi töötajat pole nähtaval</div>}
        

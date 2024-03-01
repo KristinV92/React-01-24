@@ -1,5 +1,5 @@
-import { useRef } from "react";
 import { useState } from 'react';
+import esindusedFailist from '../data/esindused.json';
 
 function Esindused() {
   // vasakul pool on muutuja, mille sees on muutuv väärtus
@@ -7,8 +7,7 @@ function Esindused() {
   // paremal pool on muutja, tema abil muudan muutujat
 const [linn,uuendaLinn] = useState("Pärnu");
 
-const [keskused, uuendaKeskused] = useState(["Ülemiste","Viimsi","Rocca al Mare","Magistrali","Vesse","Kristiine","Järveotsa"]);
-const nimiRef = useRef();
+const [keskused, uuendaKeskused] = useState(esindusedFailist);
 
 const sorteeriAZ = () => {
   keskused.sort();
@@ -24,12 +23,6 @@ const kustutaTallinnaEsindused =(index) => {
    keskused.push(uusKeskus);
    uuendaKeskused(keskused.slice());
  }
-
- const lisa = () => {
-  keskused.push(nimiRef.current.value);
-  uuendaKeskused(keskused.slice());
-}
-
 
   return (
     <div>
@@ -50,9 +43,7 @@ const kustutaTallinnaEsindused =(index) => {
      <button onClick={() => lisaTallinnaEsindused(keskus)}>Lisa lõppu juurde</button>
      </div>)}
 
-     <label>Uue esinduse nimi</label><br />
-     <input ref={nimiRef} type="text" />
-     <button onClick={lisa}>Lisa</button>
+     
      {/* 
      KOJU:
      Kustutamise võimekus

@@ -15,6 +15,8 @@ import Tootajad from './pages/Tootajad';
 import Tooted from './pages/Tooted';
 import HaldaTooted from './pages/HaldaTooted';
 import LisaHind from './pages/LisaHind';
+import LisaTootaja from './pages/LisaTootaja';
+import LisaEsindus from './pages/LisaEsindus';
 
 function App() {
   const [tume, uuendaTume] = useState(localStorage.getItem("onTume") === "jah");
@@ -75,6 +77,12 @@ function App() {
         <Link className="navlink" to="/lisa-hind">
           <span>Lisa hind</span>
         </Link>
+        <Link className="navlink" to="/lisa-tootaja">
+          <span>Lisa töötaja</span>
+        </Link>
+        <Link className="navlink" to="/lisa-esindus">
+          <span>Lisa esindus</span>
+        </Link>
         
         </div>
         <div>
@@ -97,6 +105,8 @@ function App() {
         <Route path="tooted" element={ <Tooted />} />
         <Route path="halda" element={ <HaldaTooted />} />
         <Route path="lisa-hind" element={ <LisaHind />} />
+        <Route path="lisa-tootaja" element={ <LisaTootaja />} />
+        <Route path="lisa-esindus" element={ <LisaEsindus />} />
         <Route path="*" element={ <NotFound />} />
       </Routes>
 
