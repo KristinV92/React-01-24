@@ -6,8 +6,8 @@ function HaldaJooke() {
     
 
     const kustuta = (index) => {
-        joogidFailist.splice(index, 1);
-        uuendaJoogid(joogidFailist.splice());
+        joogidFailist.splice(index,1);
+        uuendaJoogid(joogidFailist.slice());
     }
 
 
