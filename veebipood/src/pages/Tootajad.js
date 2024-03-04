@@ -91,19 +91,16 @@ function Tootajad() {
   // 1. Kustutamine (igaühele nupp)
   // 2. Igaühe lõppu lisamise võimekus
 
-    const kustutaTootaja =(index) => {
-      tootajad.splice(index, 1);
-      uuendaTootajad(tootajad.slice());
-    }
-
-    const lisaTootaja = (uusTootaja) => {
-      tootajad.push(uusTootaja);
-      uuendaTootajad(tootajad.slice());
-    }
+   const liidaTahed = () => {
+    let summa = 0;
+    tootajad.forEach(tootaja => summa += tootaja.length);
+    return summa;
+   }
 
 
   return (
     <div>
+      <div>Töötajate tähtede arv: {liidaTahed()}</div>
        <button onClick={originaali}>Tagasi originaali</button>
         <br /> <br />
     {tootajad.length > 0 &&  // siin on length, et naha mitu Arrayd on e kui palju töötajaid on 
@@ -122,13 +119,10 @@ function Tootajad() {
 
 
 
-        {tootajad.map((tootaja, index) => <div>{tootaja}
-        <button onClick={() => kustutaTootaja(index)}>X</button>
-        <button onClick={() => lisaTootaja(tootaja)}>Lisa lõppu juurde</button>
-        </div>)}
+        {tootajad.map((tootaja, index) => <div key={index}>{tootaja}</div>)}
 
         <h4>Töötajaid on: {tootajad.length}</h4>
-        <button onClick={ () => uuendaTootajad ([])} >Eemalda töötajad</button> 
+        <button onClick={ () => uuendaTootajad ([])} >Ajutiselt peida töötajad</button> 
     </div>}
 
     {tootajad.length === 0 &&  <div>Ühtegi töötajat pole nähtaval</div>}

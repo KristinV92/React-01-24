@@ -17,7 +17,7 @@ const lisa = () => {
       toast.success("Toode lisatud: " + inputiLuger.current.value);
       tootedFailist.push(inputiLuger.current.value);
       inputiLuger.current.value = "";
-}
+  }
 }
 
 const kontrolli = () => {

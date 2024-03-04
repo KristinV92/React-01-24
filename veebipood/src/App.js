@@ -17,6 +17,10 @@ import HaldaTooted from './pages/HaldaTooted';
 import LisaHind from './pages/LisaHind';
 import LisaTootaja from './pages/LisaTootaja';
 import LisaEsindus from './pages/LisaEsindus';
+import HaldaTootajad from './pages/HaldaTootajad';
+import HaldaEsindusi from './pages/HaldaEsindusi';
+import HaldaHindu from './pages/HaldaHindu';
+import YksToode from './pages/YksToode';
 
 function App() {
   const [tume, uuendaTume] = useState(localStorage.getItem("onTume") === "jah");
@@ -83,6 +87,15 @@ function App() {
         <Link className="navlink" to="/lisa-esindus">
           <span>Lisa esindus</span>
         </Link>
+        <Link className="navlink" to="/halda-tootajad">
+          <span>Halda töötajaid</span>
+        </Link>
+        <Link className="navlink" to="/halda-esindused">
+          <span>Halda esindusi</span>
+        </Link>
+        <Link className="navlink" to="/halda-hindu">
+          <span>Halda hindu</span>
+        </Link>
         
         </div>
         <div>
@@ -107,6 +120,10 @@ function App() {
         <Route path="lisa-hind" element={ <LisaHind />} />
         <Route path="lisa-tootaja" element={ <LisaTootaja />} />
         <Route path="lisa-esindus" element={ <LisaEsindus />} />
+        <Route path="halda-tootajad" element={ <HaldaTootajad />} />
+        <Route path="halda-esindused" element={ <HaldaEsindusi />} />
+        <Route path="halda-hindu" element={ <HaldaHindu/>} />
+        <Route path="toode/:index" element={ <YksToode/>} />
         <Route path="*" element={ <NotFound />} />
       </Routes>
 

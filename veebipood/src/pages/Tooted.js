@@ -1,5 +1,7 @@
 import { useState } from 'react';
-import tootedFailist from "../data/tooted.json"
+import tootedFailist from "../data/tooted.json";
+import { Link } from 'react-router-dom'; // Link on URLiga seonduv ja kõik URLiga seonduvad 
+                                        //tulevad react-router-dom'st (Route, Routes, BrowserRouter)
 
 
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
@@ -41,7 +43,15 @@ function Tooted() {
         <button onClick={sorteeriZA} >Sorteeri Z-A</button>
         <button onClick={sorteeriTahedKasvavalt} >Sorteeri tähed kasvavalt</button>
         <button onClick={sorteeriTahedKahanevalt} >Sorteeri tähed kahanevalt</button>
-        {tooted.map(toode => <div>{toode}</div>)}
+        {tooted.map((toode, i) =>
+         <div key={i}>
+          {toode}
+          {/* vasakul pool kaldkriips - muidu lisab olemasolevale URL-le
+             ja paremal pool kaldkriips - muidu number tuleb URL-i eelmise sõna otsa  */}
+          <Link to={"/toode/" + i}>
+          <button>Vaata lähemalt</button>
+          </Link>
+         </div>)}
         <h4>Tooteid on {tooted.length} (tk)</h4>
         <button onClick={() => uuendaTooted ([])}>Eemalda tooted</button>
     </div>}
