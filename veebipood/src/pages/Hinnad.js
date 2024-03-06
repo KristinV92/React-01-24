@@ -40,11 +40,6 @@ function Hinnad() {
       uuendaHinnad(hinnadFailist.slice());
     }
 
-    const lisaHind = (lisatavHind) => {
-      hinnadFailist.push(lisatavHind);
-      uuendaHinnad(hinnadFailist.slice());
-    }
-
     const kustutaEsimene = () =>{
       hinnadFailist.splice(0, 1); //esimene järjekorranumber, teine mitu tk tahan ühe nupuvajutusega kustutada
       uuendaHinnad(hinnadFailist.slice());
@@ -62,12 +57,6 @@ function Hinnad() {
 
     const kustutaNeljas = () =>{
       hinnadFailist.splice(3, 1);
-      uuendaHinnad(hinnadFailist.slice());
-    }
-
-    //kui siin on sulgude sisu täidetud, siis tuleb midagi onClick seest kaasa saata
-    const kustutaHind = (jrknr) =>{
-      hinnadFailist.splice(jrknr, 1);
       uuendaHinnad(hinnadFailist.slice());
     }
 
@@ -134,12 +123,7 @@ function Hinnad() {
 
         <h4>Hindasid on: {hinnad.length} tk</h4>
 
-        {hinnad.map((hind, jrknr) => 
-          <div key={jrknr}>
-            {hind} 
-            <button onClick={() => kustutaHind(jrknr)}>x</button>
-            <button onClick={() => lisaHind(hind)}>Lisa</button>
-          </div>)}
+        {hinnad.map((hind, jrknr) => <div key={jrknr}> {hind} </div>)}
         
         <button onClick={() => uuendaHinnad([])} >Eemalda hinnad</button>
       </div>}

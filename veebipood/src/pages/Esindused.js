@@ -59,15 +59,6 @@ const filtreeriNeljasTahtI = () => {
   uuendaKeskused(vastus);
 }
 
-const kustutaTallinnaEsindused =(index) => {
-  keskused.splice(index, 1);
-  uuendaKeskused(keskused.slice());
- }
- 
- const lisaTallinnaEsindused= (uusKeskus) => {
-   keskused.push(uusKeskus);
-   uuendaKeskused(keskused.slice());
- }
 
   return (
     <div>
@@ -94,14 +85,8 @@ const kustutaTallinnaEsindused =(index) => {
       <button onClick={filtreeriLyhenditIsSisaldavad}>Filtreeri kellel on sees lühend 'is'</button>
       <button onClick={filtreeriNeljasTahtI}>Filtreeri kellel on neljas täht 'i'</button>
       
-     {keskused.map((keskus, index) =>
-    <div key={index}>
-      {keskus}
-     <button onClick={() => kustutaTallinnaEsindused(index)}>Kustuta</button>
-     <button onClick={() => lisaTallinnaEsindused(keskus)}>Lisa lõppu juurde</button>
-    </div>)}
+     {keskused.map((keskus, index) => <div key={index}> {keskus} </div>)}
 
-     
      {/* 
      KOJU:
      Kustutamise võimekus
