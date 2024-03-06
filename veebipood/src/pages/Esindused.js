@@ -15,39 +15,48 @@ const sorteeriAZ = () => {
 }
 
 const sorteeriZA = () => {
-
+  keskused.sort((a,b) => b.localeCompare(a));
+  uuendaKeskused(keskused.slice());
 }
 
 const sorteeriTahedKasvavalt = () => {
-
+  keskused.sort((a, b) => a.length - b.length);
+  uuendaKeskused(keskused.slice());
 }
 
 const sorteeriTahedKahanevalt = () => {
-
+  keskused.sort((a, b) => b.length - a.length);
+  uuendaKeskused(keskused.slice());
 }
 
 const sorteeriTeineTahtAZ = () => {
-
+  keskused.sort((a,b) => a[1].localeCompare(b[1]));
+  uuendaKeskused(keskused.slice());
 }
 
 const filtreeriEgaLoppevad = () => {
-
+  const vastus = keskused.filter(e => e.endsWith("e") === true);
+  uuendaKeskused(vastus);
 }
 
 const filtreeriVah7Tahelised = () => {
-
+  const vastus = keskused.filter(element => element.length < 7);
+  uuendaKeskused(vastus);
 }
 
 const filtreeri9Tahelised = () => {
-
+  const vastus = keskused.filter(keskused => keskused.length === 9);
+  uuendaKeskused(vastus);
 }
 
 const filtreeriLyhenditIsSisaldavad = () => {
-
+  const vastus = keskused.filter(yksKeskus => yksKeskus.includes("is") === true );
+  uuendaKeskused(vastus);
 }
 
 const filtreeriNeljasTahtI = () => {
-
+  const vastus = keskused.filter(e => e[3] === "i");
+  uuendaKeskused(vastus);
 }
 
 const kustutaTallinnaEsindused =(index) => {
@@ -74,6 +83,17 @@ const kustutaTallinnaEsindused =(index) => {
     {linn === "Tallinn" &&
     <div>
       <button onClick={sorteeriAZ}>Sorteeri A-Z</button>
+      <button onClick={sorteeriZA} >Sorteeri Z-A</button> 
+      <button onClick={sorteeriTahedKasvavalt} >Sorteeri tähed kasvavalt</button> 
+      <button onClick={sorteeriTahedKahanevalt} >Sorteeri tähed kahanevalt</button>
+      <button onClick={sorteeriTeineTahtAZ} >Sorteeri teine täht A-Z</button> 
+
+      <button onClick={filtreeriEgaLoppevad}>Filtreeri 'e'ga lõppevad</button> 
+      <button onClick={filtreeriVah7Tahelised}>Filtreeri vähem kui 7 tähelised</button>
+      <button onClick={filtreeri9Tahelised}>Filtreeri täpselt 9 tähelised</button>
+      <button onClick={filtreeriLyhenditIsSisaldavad}>Filtreeri kellel on sees lühend 'is'</button>
+      <button onClick={filtreeriNeljasTahtI}>Filtreeri kellel on neljas täht 'i'</button>
+      
      {keskused.map((keskus, index) =>
     <div key={index}>
       {keskus}
