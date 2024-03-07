@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import hinnadFailist from "../data/hinnad.json";
+import { Link } from 'react-router-dom';
 
 function HaldaHindu() {
   const [hinnad, uuendaHinnad] = useState(hinnadFailist);
@@ -47,6 +48,9 @@ function HaldaHindu() {
             {hind} 
             <button onClick={() => kustutaHind(jrknr)}>x</button>
             <button onClick={() => lisaHind(hind)}>Lisa</button>
+            <Link to={"/muuda-hind/" + jrknr} >
+              <button>Muuda</button>
+            </Link>
           </div>)}
           <button onClick={lisaHind123}>Lisa hind 123 lõppu juurde</button>
         <br />

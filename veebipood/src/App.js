@@ -21,6 +21,13 @@ import HaldaTootajad from './pages/HaldaTootajad';
 import HaldaEsindusi from './pages/HaldaEsindusi';
 import HaldaHindu from './pages/HaldaHindu';
 import YksToode from './pages/YksToode';
+import YksTootaja from './pages/YksTootaja';
+import YksEsindus from './pages/YksEsindus';
+import YksHind from './pages/YksHind';
+import MuudaEsindus from './pages/MuudaEsindus';
+import MuudaTootaja from './pages/MuudaTootaja';
+import MuudaHind from './pages/MuudaHind';
+import MuudaToode from './pages/MuudaToode';
 
 function App() {
   const [tume, uuendaTume] = useState(localStorage.getItem("onTume") === "jah");
@@ -124,6 +131,13 @@ function App() {
         <Route path="halda-esindused" element={ <HaldaEsindusi />} />
         <Route path="halda-hindu" element={ <HaldaHindu/>} />
         <Route path="toode/:index" element={ <YksToode/>} />
+        <Route path="esindus/:index" element={ <YksEsindus/>} />
+        <Route path="tootaja/:index" element={ <YksTootaja/>} />
+        <Route path="hind/:index" element={ <YksHind/>} />
+        <Route path="muuda-esindus/:index" element={ <MuudaEsindus/>} />
+        <Route path="muuda-tootaja/:index" element={ <MuudaTootaja/>} />
+        <Route path="muuda-hind/:index" element={ <MuudaHind/>} />
+        <Route path="muuda-toode/:index" element={ <MuudaToode/>} />
         <Route path="*" element={ <NotFound />} />
       </Routes>
 

@@ -9,13 +9,15 @@ const [linn,uuendaLinn] = useState("Pärnu");
 
 const [keskused, uuendaKeskused] = useState(esindusedFailist);
 
+// .sort() ---> kõik täpitähed lõppu
+
 const sorteeriAZ = () => {
-  keskused.sort();
+  keskused.sort((a,b) => a.localeCompare(b, "et"));
   uuendaKeskused(keskused.slice());
 }
 
 const sorteeriZA = () => {
-  keskused.sort((a,b) => b.localeCompare(a));
+  keskused.sort((a,b) => b.localeCompare(a, "et"));
   uuendaKeskused(keskused.slice());
 }
 
@@ -30,7 +32,7 @@ const sorteeriTahedKahanevalt = () => {
 }
 
 const sorteeriTeineTahtAZ = () => {
-  keskused.sort((a,b) => a[1].localeCompare(b[1]));
+  keskused.sort((a,b) => a[1].localeCompare(b[1], "et"));
   uuendaKeskused(keskused.slice());
 }
 

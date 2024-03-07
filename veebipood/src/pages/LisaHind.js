@@ -16,7 +16,7 @@ function LisaHind() {
         return;
       }
 
-      hinnadFailist.push(hindRef.current.value);
+      hinnadFailist.push(Number(hindRef.current.value));
       toast.success("Hind lisatud!");
       hindRef.current.value = "";
     }
