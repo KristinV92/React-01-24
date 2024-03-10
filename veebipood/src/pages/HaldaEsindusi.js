@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import esindusedFailist from "../data/esindused.json"
+import esindusedFailist from "../data/esindused.json";
+import { Link } from "react-router-dom";
 
 
 // KOJU:
@@ -28,6 +29,9 @@ function HaldaEsindusi() {
       {keskus}
      <button onClick={() => kustutaTallinnaEsindused(index)}>Kustuta</button>
      <button onClick={() => lisaTallinnaEsindused(keskus)}>Lisa lõppu juurde</button>
+     <Link to={"/muuda-esindus/" +index}>
+        <button>Muuda</button>
+     </Link>
     </div>)}
     </div>
   )

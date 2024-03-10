@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import { useState } from "react";
 import nimedJSON from "../nimed.json";
+import { Link } from "react-router-dom";
 
 function TagasisideAndjad() {
     const [andjad, uuendaAndjad] = useState(nimedJSON);
@@ -59,6 +60,9 @@ function TagasisideAndjad() {
     {andjad.map((element,index) =>
     <div key={element}>
         {element} <button onClick={() => kustutaTagasiside(index)}>Kustuta</button>
+        <Link to={"/yks-andja/" + index}>
+          <button>Vaata detailsemalt</button>
+        </Link>
     </div>)}
 
     <h3><label> Lisa tagasiside andja</label></h3> 

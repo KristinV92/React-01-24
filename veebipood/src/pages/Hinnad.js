@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import hinnadFailist from "../data/hinnad.json";
+import { Link } from 'react-router-dom';
 
 // App.js sees teha URL ja faili seos (URL-ks pange sama mis faili nimi)
 // URL-le sattumise võimekus läbi <Link>
@@ -23,7 +24,7 @@ function Hinnad() {
       hinnad.sort((a, b) => a.toString().localeCompare(a.toString()));
       // hinnad.reverse();
       uuendaHinnad(hinnad.slice());
-  }
+    }
 
     const sorteeriKasvavalt = () => {
       hinnad.sort((a, b) => a - b);
@@ -123,7 +124,13 @@ function Hinnad() {
 
         <h4>Hindasid on: {hinnad.length} tk</h4>
 
-        {hinnad.map((hind, jrknr) => <div key={jrknr}> {hind} </div>)}
+        {hinnad.map((hind, jrknr) => 
+        <div key={jrknr}> 
+        {hind} 
+        <Link to={"/hind/" +jrknr}>
+          <button>Vaata lähemalt</button>
+        </Link>
+        </div>)}
         
         <button onClick={() => uuendaHinnad([])} >Eemalda hinnad</button>
       </div>}

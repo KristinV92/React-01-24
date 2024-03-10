@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import esindusedFailist from '../data/esindused.json';
+import { Link } from "react-router-dom";
 
 function Esindused() {
   // vasakul pool on muutuja, mille sees on muutuv väärtus
@@ -87,7 +88,12 @@ const filtreeriNeljasTahtI = () => {
       <button onClick={filtreeriLyhenditIsSisaldavad}>Filtreeri kellel on sees lühend 'is'</button>
       <button onClick={filtreeriNeljasTahtI}>Filtreeri kellel on neljas täht 'i'</button>
       
-     {keskused.map((keskus, index) => <div key={index}> {keskus} </div>)}
+     {keskused.map((keskus, index) => 
+     <div key={index}> {keskus}  
+      <Link to={"/Esindus/" +index}>
+          <button>Vaata lähemalt</button>
+      </Link>
+     </div>)}
 
      {/* 
      KOJU:
