@@ -12,13 +12,16 @@ function MuudaHind() {
   }
 
   const muuda = () => {
-    hinnadFailist[index] = Number(hindRef.current.value);
+    hinnadFailist[index] = {
+      "number": Number(hindRef.current.value),
+      "lisaja": hind.lisaja
+    };
   }
 
   return (
     <div>
       <label>Hind</label> <br />
-      <input ref={hindRef} defaultValue={hind} type="text" /> <br />
+      <input ref={hindRef} defaultValue={hind.number} type="text" /> <br />
       <button onClick={muuda}>Muuda hind</button>
     </div>
   )

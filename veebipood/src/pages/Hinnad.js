@@ -16,23 +16,23 @@ function Hinnad() {
     const [hinnad, uuendaHinnad] = useState(hinnadFailist);
    
     const sorteeriAZ = () => {
-      hinnad.sort((a, b) => a.toString().localeCompare(b.toString()));
+      hinnad.sort((a, b) => a.number.toString().localeCompare(b.number.toString()));
       uuendaHinnad(hinnad.slice());
     }
 
     const sorteeriZA = () => {
-      hinnad.sort((a, b) => a.toString().localeCompare(a.toString()));
+      hinnad.sort((a, b) => b.number.toString().localeCompare(a.number.toString()));
       // hinnad.reverse();
       uuendaHinnad(hinnad.slice());
     }
 
     const sorteeriKasvavalt = () => {
-      hinnad.sort((a, b) => a - b);
+      hinnad.sort((a, b) => a.number - b.number);
       uuendaHinnad(hinnad.slice());
     }
 
     const sorteeriKahanevalt = () => {
-      hinnad.sort((a, b) => b - a);
+      hinnad.sort((a, b) => b.number - a.number);
       uuendaHinnad(hinnad.slice());
     }
 
@@ -62,7 +62,7 @@ function Hinnad() {
     }
 
     const filtreeriPaarisArvud = () => {
-      const vastus = hinnad.filter(hind => hind % 2 === 0);
+      const vastus = hinnad.filter(hind => hind.number % 2 === 0);
       uuendaHinnad(vastus);
     }
 
@@ -78,7 +78,7 @@ function Hinnad() {
       // summa += 56;
       // summa += 88;
       
-      hinnad.forEach(hind => summa = summa + hind);
+      hinnad.forEach(hind => summa = summa + hind.number);
       return summa;
     }
 
@@ -126,14 +126,14 @@ function Hinnad() {
 
         {hinnad.map((hind, jrknr) => 
         <div key={jrknr}> 
-        {hind} 
+        {hind.number} ({hind.lisaja}) 
         <Link to={"/hind/" +jrknr}>
           <button>Vaata lähemalt</button>
         </Link>
         </div>)}
         
-        <button onClick={() => uuendaHinnad([])} >Eemalda hinnad</button>
-      </div>}
+          <button onClick={() => uuendaHinnad([])} >Eemalda hinnad</button>
+        </div>}
 
       <div>Kogusumma on: {hinnadKokku()} </div>
 
