@@ -4,6 +4,9 @@ import {ToastContainer, toast } from 'react-toastify';
 
 function LisaTootaja() {
     const nimiRef = useRef();
+    const ametRef = useRef();
+    const emailRef = useRef();
+    const vanusRef = useRef();
 
     const lisa = () =>{
       if (nimiRef.current.value  === "") {
@@ -21,23 +24,38 @@ function LisaTootaja() {
       return; 
       } 
 
-      tootajadFailist.push(nimiRef.current.value);
+      tootajadFailist.push({
+        "nimi": nimiRef.current.value,
+        "amet": ametRef.current.value,
+        "email": emailRef.current.value, 
+        "vanus":Number(vanusRef.current.value) 
+       });
+
       toast.success("Nimi lisatud");
       nimiRef.current.value = "";
+      ametRef.current.value = "";
+      emailRef.current.value = "";
+      vanusRef.current.value = "";
     }
 
 
   return (
     <div>
-        <label>Uue töötaja nimi</label><br />
-        <input ref={nimiRef}type="text" /><br />
+      <label>Uue töötaja nimi</label><br />
+      <input ref={nimiRef}type="text" /><br />
+      <label>Uue töötaja amet</label><br />
+      <input ref={ametRef} type="text" /> <br />
+      <label>Uue töötaja email</label><br />
+      <input ref={emailRef} type="text" /> <br />
+      <label>Uue töötaja vanus</label><br />
+      <input ref={vanusRef} type="number" /> <br />
         <button onClick={lisa}>Lisa</button><br />
 
-        <ToastContainer 
-            position="bottom-right"
-            autoClose={4000}
-            theme="dark"
-        />
+          <ToastContainer 
+              position="bottom-right"
+              autoClose={4000}
+              theme="dark"
+          />
     </div>
   )
 }

@@ -5,6 +5,8 @@ import {ToastContainer, toast } from 'react-toastify';
 
 function LisaEsindus() {
     const nimiRef = useRef(); 
+    const aadressRef = useRef();
+    const kontaktRef = useRef();
 
     const lisa = () => {
         if (nimiRef.current.value  === "") {
@@ -22,22 +24,33 @@ function LisaEsindus() {
         return; 
         } 
 
-        esindusedFailist.push(nimiRef.current.value);
+        esindusedFailist.push({
+          "nimi": nimiRef.current.value,
+          "aadress": aadressRef.current.value,
+          "tel": Number(kontaktRef.current.value)
+        });
+
         toast.success("Esindus lisatud");
         nimiRef.current.value = "";
+        aadressRef.current.value = "";
+        kontaktRef.current.value = "";
     }
 
   return (
     <div>
         <label>Uue esinduse nimi</label><br />
-        <input ref={nimiRef} type="text" />
-        <button onClick={lisa}>Lisa</button>
+        <input ref={nimiRef} type="text" /><br />
+        <label>Uue esinduse aadress</label><br />
+        <input ref={aadressRef} type="text" /><br />
+        <label>Uue esinduse kontakt</label><br />
+        <input ref={kontaktRef} type="number" /><br />
+      <button onClick={lisa}>Lisa</button>
 
-        <ToastContainer 
-            position="bottom-right"
-            autoClose={4000}
-            theme="dark"
-        />
+          <ToastContainer 
+              position="bottom-right"
+              autoClose={4000}
+              theme="dark"
+          />
     </div>
   )
 }

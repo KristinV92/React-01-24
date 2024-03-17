@@ -122,11 +122,14 @@ function Tootajad() {
 
         {tootajad.map((tootaja, index) =>
         <div key={index}>
-          {tootaja}
+            <h3>{tootaja.nimi}</h3>
+            <div>Amet: {tootaja.amet}</div>
+            <div>Email: {tootaja.email}</div>
+            <div>Vanus: {tootaja.vanus}</div>
           <Link to={"/tootaja/" + index}>
             <button>Vaata lähemalt</button>
           </Link>
-          </div>)}
+        </div>)}
 
         <h4>Töötajaid on: {tootajad.length}</h4>
         <button onClick={ () => uuendaTootajad ([])} >Ajutiselt peida töötajad</button> 

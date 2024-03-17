@@ -13,7 +13,9 @@ if (esindus === undefined) {
 
   return (
     <div>
-      <h2>{esindus}</h2>
+      <h2>{esindus.nimi}</h2>
+      <div>Aadress: {esindus.aadress}</div>
+      <div>Kontakt: {esindus.tel}</div>
     </div>
   )
 }

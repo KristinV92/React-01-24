@@ -66,7 +66,7 @@ const filtreeriNeljasTahtI = () => {
   return (
     <div>
     <div>Esindused</div>
-    <span className={linn === "Tallinn" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Tallinn")}>Tallinn(7)</span>
+    <span className={linn === "Tallinn" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Tallinn")}>Tallinn(6)</span>
     <span className={linn === "Tartu" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Tartu")}>Tartu(2)</span>
     <span className={linn === "Narva" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Narva")}>Narva(1)</span>
     <span className={linn === "TPärnu" ? "linn-aktiivne" : "linn"} onClick={() => uuendaLinn("Pärnu")}>Pärnu(1)</span>
@@ -89,7 +89,11 @@ const filtreeriNeljasTahtI = () => {
       <button onClick={filtreeriNeljasTahtI}>Filtreeri kellel on neljas täht 'i'</button>
       
      {keskused.map((keskus, index) => 
-     <div key={index}> {keskus}  
+     <div key={index}>
+      <div>{keskus.nimi}</div>  
+      <div>Aadress: {keskus.aadress}</div>  
+      <div>Kontakt: {keskus.tel}</div> 
+       
       <Link to={"/Esindus/" +index}>
           <button>Vaata lähemalt</button>
       </Link>
