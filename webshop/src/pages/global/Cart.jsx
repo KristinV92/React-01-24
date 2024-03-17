@@ -22,9 +22,10 @@ function Cart() {
 
   return (
     <div>
-        {cart.length === 0 && <div>The shopping cart is currently empty</div>}
+        {cart.length === 0 && <div>Your shopping cart is currently empty</div>}
+        {cart.length === 0 && <img src="/empty.svg" alt="" />}
+        <div>Total cost: {calculateTotal()}€</div>
   
-
       {cart.length > 0 &&
       <div>
         <div>You have {cart.length} items in your cart</div>
@@ -39,8 +40,6 @@ function Cart() {
             <button onClick={() => deleteFromCart(index)}>Delete</button> 
             <button onClick={() => addToCart(product)}>Add one to the end</button> 
           </div> )}
-
-          <div>Total cost: {calculateTotal()}€</div>
     </div>
   )
 }
