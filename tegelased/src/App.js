@@ -4,11 +4,12 @@ import Avaleht from "./pages/Avaleht";
 import LisaTegelane from "./pages/LisaTegelane";
 import ValitudTegelased from "./pages/ValitudTegelased";
 
+
 function App() {
   return (
     <div>
      <Link to="/">
-      <button>Avalehele</button>
+      <button>Avaleht</button>
      </Link>
      <Link to="lisa-tegelane">
       <button>Lisa Tegelane</button>
@@ -16,6 +17,7 @@ function App() {
      <Link to="valitud-tegelased">
       <button>Valitud Tegelased</button>
      </Link>
+     
      <Routes>
         <Route path="" element={ <Avaleht /> }/>
         <Route path="lisa-tegelane" element={ <LisaTegelane /> }/>
