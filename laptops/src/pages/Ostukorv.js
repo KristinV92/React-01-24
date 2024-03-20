@@ -14,9 +14,9 @@ function Ostukorv() {
     <div>
         {ostukorv.map((ostukorviEse, index) =>
         <div key={index}>
-            {ostukorviEse.mark}
-            {ostukorviEse.mudel}
-            {ostukorviEse.maksumus}
+           <div>Mark: {ostukorviEse.mark}</div>
+           <div>Mudel: {ostukorviEse.mudel}</div>
+           <div>Maksumus: {ostukorviEse.maksumus}</div>
             <button onClick={() => kustuta(index)}>x</button>
         </div>)}
     </div>);
