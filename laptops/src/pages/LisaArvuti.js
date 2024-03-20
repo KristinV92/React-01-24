@@ -1,12 +1,16 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 
 function LisaArvuti() {
   const [message, setMessage] = useState("Lisa arvuti!");
   const [n2itaNuppu, uuendaN2itaNuppu] = useState(true);
 
+  const markRef = useRef();
+  const mudelRef = useRef();
+  const maksumusRef = useRef();
+
 function addProduct (){
-  setMessage("Arvuti lisatud");
+  setMessage("Arvuti lisatud!");
   uuendaN2itaNuppu(false);
   toast.success("Arvuti lisatud!", {
     style: {
@@ -22,7 +26,17 @@ function addProduct (){
   }
     )
 
+const newComputer = {
+    "mark": markRef.current.value,
+    "mudel": mudelRef.current.value,
+    "maksumus": maksumusRef.current.value,
+}
+
+const computers = JSON.parse(localStorage.getItem("laptops")) || [];
+computers.push(newComputer);
+localStorage.setItem("laptops", JSON.stringify(computers));
   }
+
   return (
     <div>
      <div>Sõnum: {message}</div>
@@ -33,7 +47,7 @@ function addProduct (){
      <label>Maksumus</label> <br />
      <input type="number" /> <br />
 
-     <div class="grid gap-6 mb-6 md:grid-cols-2 mx-20">
+     <div className="grid gap-6 mb-6 md:grid-cols-2 mx-20">
         <div>
             <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Mark</label>
             <input type="text" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Mark" required />
