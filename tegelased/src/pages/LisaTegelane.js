@@ -30,7 +30,7 @@ function LisaTegelane() {
   return ( 
   <div>
     <div>{sonum} </div>
-    <div>Lisa uus tegelane</div>
+    <h2>Lisa uus tegelane</h2>
         <label>Tegelase eesnimi:</label> <br />
         <input ref={eesnimiRef} type="text" /> <br />
         <label>Tegelase perkonnanimi:</label> <br />
