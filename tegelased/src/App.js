@@ -11,10 +11,10 @@ function App() {
      <Link to="/">
       <button>Avaleht</button>
      </Link>
-     <Link to="lisa-tegelane">
+     <Link to="/lisa-tegelane">
       <button>Lisa Tegelane</button>
      </Link>
-     <Link to="valitud-tegelased">
+     <Link to="/valitud-tegelased">
       <button>Valitud Tegelased</button>
      </Link>
      
