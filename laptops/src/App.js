@@ -5,6 +5,7 @@ import VaataArvuteid from './pages/VaataArvuteid';
 import LisaArvuti from './pages/LisaArvuti';
 import Navbar from './components/Navbar';
 import Ostukorv from './pages/Ostukorv';
+import Tooted from './pages/Tooted';
 
 function App() {
   return (
@@ -22,11 +23,15 @@ function App() {
       <Link to="/cart">
         <button>Ostukorv</button>
       </Link>
+      <Link to="/products">
+        <button>Vaata tooteid</button>
+      </Link>
 <Routes>
 <Route path="" exact element={ <Avaleht />} />
 <Route path="all" exact element={ <VaataArvuteid />} />
 <Route path="add" exact element={ <LisaArvuti />} />
 <Route path="cart" exact element={ <Ostukorv />} />
+<Route path="products" exact element={ <Tooted />} />
 </Routes>
     </div>
   );

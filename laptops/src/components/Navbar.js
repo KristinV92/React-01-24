@@ -23,6 +23,7 @@ function Navbar() {
               <a href="#" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Calendar</a>
               <a href="https://www.techradar.com/" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Arvutite review'd</a>
               <Link to="/cart" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Ostukorv</Link>
+              <Link to="/products" className="text-gray-300 hover:bg-gray-700 hover:text-white rounded-md px-3 py-2 text-sm font-medium">Vaata tooteid</Link>
             </div>
           </div>
         </div>
