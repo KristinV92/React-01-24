@@ -33,7 +33,7 @@ function LisaTegelane() {
     <h2>Lisa uus tegelane</h2>
         <label>Tegelase eesnimi:</label> <br />
         <input ref={eesnimiRef} type="text" /> <br />
-        <label>Tegelase perkonnanimi:</label> <br />
+        <label>Tegelase perekonnanimi:</label> <br />
         <input ref={perekonnanimiRef} type="text" /> <br />
         <label>Tegelase elukoht:</label> <br />
         <input ref={elukohtRef} type="text" /><br />

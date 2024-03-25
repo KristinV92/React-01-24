@@ -18,9 +18,9 @@ function Avaleht() {
 
     const valiTegelane = (klikitudTegelane) => {
         let valitudLS = JSON.parse(localStorage.getItem("valitudTegelased")) || [];
-        valitudLS = JSON.parse(valitudLS) || [];
+        // valitudLS = JSON.parse(valitudLS) || [];
         valitudLS.push(klikitudTegelane);
-        localStorage.setItem("valitudTegelased", valitudLS);
+        localStorage.setItem("valitudTegelased", JSON.stringify(valitudLS));
     }
 
   return ( 

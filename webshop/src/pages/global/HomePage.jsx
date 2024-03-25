@@ -3,10 +3,18 @@ import React, { useState } from 'react'
 import productsFromFile from "../../data/products.json";
 import { Link } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { useTranslation } from 'react-i18next';
+import "../../css/Homepage.css";
 function HomePage() {
-    const [products, setProducts] = useState(productsFromFile);
+  // Reacti hookid:
+  // 1. Peab olema imporditud
+  // 2. Peab algama use- eesliidesega
+  // 3. Ei tohi olla funktsiooni sees kus ma teda kasutusele võtan
+  // 4. Ei tohi olla tingimuslik (ei tohi teha enne teda early return)
+  // 5. Alati sulud lõpus kui teda kasutusele võtan
+
+    const { t } = useTranslation(); //i18next mooduli enda tehtud hook
+    const [products, setProducts] = useState(productsFromFile); // reacti enda tehtud hook
 
     const addCart = (product) => {
       const cartLS = JSON.parse(localStorage.getItem("cart")) || [];
@@ -83,6 +91,7 @@ function HomePage() {
 
   return (
     <div>
+      <h1>{t('Welcome to React')}</h1>
       <br />
       <button onClick={sortAZ} >Sorting A-Z</button>
       <button onClick={sortZA}>Sorting Z-A</button>
@@ -97,20 +106,23 @@ function HomePage() {
       <br />
       <button onClick={original}>Back to original</button>
 
-      {products.map((product, index) =>
+      
+     <div className="products"> 
+     {products.map((product, index) =>
           <div key={product.id}>
               <img style={{width: "100px"}} src={product.image} alt="" />
               <div>{product.title}</div>
               <div>{product.price}€</div>
 
             <Link to={"/product/" + index}>
-              <button>View details</button>
+              <button>{t("view-details")}</button>
             </Link>
 
-              <button onClick={() => addCart(product)}>Add to cart</button>
+              <button onClick={() => addCart(product)}>{t("add-to-cart")}</button>
 
           </div>
           )}
+      </div>
 
       <ToastContainer
         position="bottom-right"
