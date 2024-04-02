@@ -9,9 +9,9 @@ const [bodyParts, setBodyParts] = useState([]);
 
 useEffect(() => {
     const fetchExercisesData = async () => {
-      const bodyPartsData = await fetchData("https://exercisedb.p.rapidapi.com/exercises/bodyPartList", exerciseOptions);
+      const bodyPartsData = await fetchData("https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises", exerciseOptions);
       console.log(bodyPartsData);
-      setBodyParts(['all', ...bodyPartsData]);
+      // setBodyParts(['all', ...bodyPartsData]);
     };
 
     fetchExercisesData();
@@ -19,7 +19,7 @@ useEffect(() => {
 
 const handleSearch = async () => {
     if (search) {
-      const exercisesData = await fetchData("https://exercisedb.p.rapidapi.com/exercises", exerciseOptions);
+      const exercisesData = await fetchData("https://exercises-by-api-ninjas.p.rapidapi.com/v1/exercises", exerciseOptions);
 
       const searchedExercises = exercisesData.filter(
         (exercises) => exercises.name.toLowerCase().includes(search)
