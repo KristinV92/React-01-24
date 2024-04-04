@@ -42,7 +42,7 @@ function AddProduct() {
         <input ref={priceRef} type="number" /> <br />
         <label>Product description:</label> <br />
         <input ref={descriptionRef} type="text" /> <br />
-        <label>Product category:</label> <br />
+        <label>Product category</label> <br />
         <input ref={categoryRef}  type="text" /> <br />
         <label>Product image:</label> <br />
         <input ref={imgRef} type="text" /> <br />
