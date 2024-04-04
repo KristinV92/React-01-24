@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/static/css/main.0352413c.css",
+    "main.js": "/static/js/main.d9d6e95b.js",
+    "static/media/Kristin_Vaik_CV_eng.pdf": "/static/media/Kristin_Vaik_CV_eng.pdf",
+    "static/media/bannerImg.png": "/static/media/bannerImg.e225c5dbdb7475319764.png",
+    "index.html": "/index.html",
+    "main.0352413c.css.map": "/static/css/main.0352413c.css.map",
+    "main.d9d6e95b.js.map": "/static/js/main.d9d6e95b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0352413c.css",
+    "static/js/main.d9d6e95b.js"
+  ]
+}
