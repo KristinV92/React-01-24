@@ -3,7 +3,7 @@ import { useTypewriter, Cursor } from "react-simple-typewriter";
 import { BsCloudLightningFill, BsFacebook } from "react-icons/bs";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { SiYoutubemusic } from "react-icons/si";
-import { FiInstagram, FiMail, FiSend } from "react-icons/fi";
+import { FiInstagram, FiSend } from "react-icons/fi";
 import CV from "../../assets/Kristin_Vaik_CV_eng.pdf";
 import { bannerImg } from "../../assets/index";
 
@@ -32,25 +32,21 @@ const Left = () => {
             {text}<Cursor cursorBlinking="false" cursorStyle="|" />
           </p>
           <div className="flex justify-center gap-2 mt-2">
-            <span className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            <a href="https://github.com/KristinV92/" className="hover:text-designColor duration-300 cursor-pointer text-xl">
               <FaGithub />
-            </span>
-            <span className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            </a>
+            <a href="https://www.linkedin.com/in/vaikkristin" className="hover:text-designColor duration-300 cursor-pointer text-xl">
               <FaLinkedin />
-            </span>
-            <span className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            </a>
+            <a href="https://www.youtube.com/@KristinV92" className="hover:text-designColor duration-300 cursor-pointer text-xl">
               <SiYoutubemusic />
-            </span>
-            <span className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            </a>
+            <a href="https://www.facebook.com/Kristin.Vaik" className="hover:text-designColor duration-300 cursor-pointer text-xl">
               <BsFacebook />
-            </span>
-            <span className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            </a>
+            <a href="https://www.instagram.com/kristin.vaik/" className="hover:text-designColor duration-300 cursor-pointer text-xl">
               <FiInstagram />
-            </span>
-
-            <span className="hover:text-designColor duration-300 cursor-pointer text-xl">
-              <FiMail />
-            </span>
+            </a>
           </div>
         </div>
         <div className="flex h-14">
@@ -64,9 +60,9 @@ const Left = () => {
               Download CV <BsCloudLightningFill />
             </button>
           </a>
-          <button className="w-1/2 border-t-[1px] border-t-zinc-800 text-sm tracking-wide uppercase flex justify-center items-center gap-2 hover:text-designColor duration-300">
-            Contact me <FiSend />
-          </button>
+          <a href="mailto:kristin.lapsanit@gmail.com" className="w-1/2 border-t-[1px] border-t-zinc-800 text-sm tracking-wide uppercase flex justify-center items-center gap-2 hover:text-designColor duration-300">
+  Contact me <FiSend />
+</a>
         </div>
       </div>
     </div>

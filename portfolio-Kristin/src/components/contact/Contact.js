@@ -51,13 +51,13 @@ const Contact = () => {
       setErrMessage(true);
     }
     if (clientName && email && EmailValidation(email) && messages) {
-      axios.post("https://getform.io/f/e18ee560-5133-4cfe-9a48-eddb6f012a9f", {
+      axios.post("https://getform.io/f/pagxlyrb", {
         name: clientName,
         email: email,
         message: messages,
       });
       setSuccessMsg(
-        `Hello dear ${clientName}, Your messages has been sent successfully. Thank you for your time!`
+        `Hello ${clientName}, Your messages has been sent successfully. Thank you for your time!`
       );
       setClientName("");
       setEmail("");
@@ -94,7 +94,7 @@ const Contact = () => {
         ) : (
           <form
             id="form"
-            action="https://getform.io/f/e18ee560-5133-4cfe-9a48-eddb6f012a9f"
+            action="https://getform.io/f/pagxlyrb"
             method="POST"
             className="p-6 flex flex-col gap-6"
           >
