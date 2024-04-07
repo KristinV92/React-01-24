@@ -32,19 +32,19 @@ const Left = () => {
             {text}<Cursor cursorBlinking="false" cursorStyle="|" />
           </p>
           <div className="flex justify-center gap-2 mt-2">
-            <a href="https://github.com/KristinV92/" className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            <a href="https://github.com/KristinV92/" target="_blank" className="hover:text-designColor duration-300 cursor-pointer text-xl" rel="noreferrer">
               <FaGithub />
             </a>
-            <a href="https://www.linkedin.com/in/vaikkristin" className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            <a href="https://www.linkedin.com/in/vaikkristin/" target="_blank" className="hover:text-designColor duration-300 cursor-pointer text-xl" rel="noreferrer">
               <FaLinkedin />
             </a>
-            <a href="https://www.youtube.com/@KristinV92" className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            <a href="https://www.youtube.com/@KristinV92/" target="_blank" className="hover:text-designColor duration-300 cursor-pointer text-xl" rel="noreferrer">
               <SiYoutubemusic />
             </a>
-            <a href="https://www.facebook.com/Kristin.Vaik" className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            <a href="https://www.facebook.com/Kristin.Vaik/" target="_blank" className="hover:text-designColor duration-300 cursor-pointer text-xl" rel="noreferrer">
               <BsFacebook />
             </a>
-            <a href="https://www.instagram.com/kristin.vaik/" className="hover:text-designColor duration-300 cursor-pointer text-xl">
+            <a href="https://www.instagram.com/kristin.vaik/" target="_blank" className="hover:text-designColor duration-300 cursor-pointer text-xl" rel="noreferrer"> 
               <FiInstagram />
             </a>
           </div>
@@ -61,8 +61,8 @@ const Left = () => {
             </button>
           </a>
           <a href="mailto:kristin.lapsanit@gmail.com" className="w-1/2 border-t-[1px] border-t-zinc-800 text-sm tracking-wide uppercase flex justify-center items-center gap-2 hover:text-designColor duration-300">
-  Contact me <FiSend />
-</a>
+            Contact me <FiSend />
+          </a>
         </div>
       </div>
     </div>
