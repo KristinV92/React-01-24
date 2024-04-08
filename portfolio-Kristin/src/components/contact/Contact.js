@@ -13,7 +13,7 @@ const Contact = () => {
   const [errEmail, setErrEmail] = useState(false);
   const [errMessages, setErrMessage] = useState(false);
   // ================= Error Messages End here ===================
-  const [seuccessMsg, setSuccessMsg] = useState("");
+  const [successMsg, setSuccessMsg] = useState("");
   // ================= Email Validation Start here ===============
   const EmailValidation = (email) => {
     return String(email)
@@ -87,9 +87,9 @@ const Contact = () => {
       </div>
       <div className="w-full mt-10">
         <Title title="Send" subTitle="Messages" />
-        {seuccessMsg ? (
+        {successMsg ? (
           <p className="text-center text-base font-titleFont p-20 text-designColor">
-            {seuccessMsg}
+            {successMsg}
           </p>
         ) : (
           <form
